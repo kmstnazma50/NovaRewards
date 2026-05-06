@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Rewards Hub</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:
+    linear-gradient(135deg,#0f172a,#1e1b4b,#111827);
+    min-height:100vh;
+    padding:25px;
+    color:white;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter:blur(14px);
+    border-radius:30px;
+    padding:30px;
+    box-shadow:0 0 40px rgba(0,0,0,0.4);
+}
+
+.title{
+    text-align:center;
+    font-size:42px;
+    font-weight:bold;
+    margin-bottom:10px;
+    background:linear-gradient(90deg,#60a5fa,#a78bfa,#f472b6);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.subtitle{
+    text-align:center;
+    color:#cbd5e1;
+    margin-bottom:30px;
+}
+
+/* ===== EDIT LINKS SECTION ===== */
+
+.link-editor{
+    background:#0f172a;
+    border:1px dashed #64748b;
+    padding:20px;
+    border-radius:20px;
+    margin-bottom:35px;
+}
+
+.link-editor h2{
+    margin-bottom:15px;
+    color:#38bdf8;
+}
+
+.link-box{
+    margin-bottom:12px;
+}
+
+.link-box label{
+    display:block;
+    margin-bottom:5px;
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+.link-box input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:#1e293b;
+    color:white;
+}
+
+/* ===== BUTTON GRID ===== */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.card-btn{
+    background:
+    linear-gradient(135deg,#312e81,#1e293b);
+    padding:18px;
+    border-radius:20px;
+    text-decoration:none;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    transition:.25s;
+    border:1px solid rgba(255,255,255,0.08);
+    position:relative;
+    overflow:hidden;
+}
+
+.card-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(99,102,241,.4);
+}
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.left i{
+    font-size:22px;
+    color:#38bdf8;
+}
+
+.counter{
+    background:#0f172a;
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:13px;
+    color:#facc15;
+    border:1px solid #475569;
+}
+
+/* ===== TOTAL ===== */
+
+.total-box{
+    margin:25px 0;
+    text-align:center;
+    font-size:24px;
+    color:#facc15;
+}
+
+@media(max-width:700px){
+
+.title{
+    font-size:30px;
+}
+
+.container{
+    padding:20px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="title">
+<i class="fa-solid fa-bolt"></i>
+Rewards Center
+</div>
+
+<div class="subtitle">
+Premium Deals • Instant Access • Modern UI
+</div>
+
+<!-- ============================= -->
+<!-- 🔥 EDIT YOUR LINKS HERE 🔥 -->
+<!-- শুধু নিচের link পরিবর্তন করবেন -->
+<!-- ============================= -->
+
+<div class="link-editor">
+
+<h2>🔗 Edit Links Here</h2>
+
+<div class="link-box">
+<label>Offer 1 Link</label>
+<input type="text" id="link1"
+value="https://example.com">
+</div>
+
+<div class="link-box">
+<label>Offer 2 Link</label>
+<input type="text" id="link2"
+value="https://example.com">
+</div>
+
+<div class="link-box">
+<label>Offer 3 Link</label>
+<input type="text" id="link3"
+value="https://example.com">
+</div>
+
+<div class="link-box">
+<label>Offer 4 Link</label>
+<input type="text" id="link4"
+value="https://example.com">
+</div>
+
+</div>
+
+<div class="total-box">
+🔥 Total Clicks:
+<span id="total">0</span>
+</div>
+
+<div class="grid">
+
+<a class="card-btn" id="btn1" target="_blank">
+<div class="left">
+<i class="fa-solid fa-gift"></i>
+<span>Special Reward</span>
+</div>
+<div class="counter" id="count1">0</div>
+</a>
+
+<a class="card-btn" id="btn2" target="_blank">
+<div class="left">
+<i class="fa-solid fa-fire"></i>
+<span>Hot Bonus</span>
+</div>
+<div class="counter" id="count2">0</div>
+</a>
+
+<a class="card-btn" id="btn3" target="_blank">
+<div class="left">
+<i class="fa-solid fa-star"></i>
+<span>VIP Access</span>
+</div>
+<div class="counter" id="count3">0</div>
+</a>
+
+<a class="card-btn" id="btn4" target="_blank">
+<div class="left">
+<i class="fa-solid fa-crown"></i>
+<span>Premium Loot</span>
+</div>
+<div class="counter" id="count4">0</div>
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+const buttons = [
+{
+btn:"btn1",
+link:"link1",
+count:"count1"
+},
+{
+btn:"btn2",
+link:"link2",
+count:"count2"
+},
+{
+btn:"btn3",
+link:"link3",
+count:"count3"
+},
+{
+btn:"btn4",
+link:"link4",
+count:"count4"
+}
+];
+
+let total = 0;
+
+buttons.forEach((item,index)=>{
+
+let clicks =
+localStorage.getItem(item.btn) || 0;
+
+document.getElementById(item.count)
+innerText = clicks;
+
+total += Number(clicks);
+
+const btn =
+document.getElementById(item.btn);
+
+btn.href =
+document.getElementById(item.link).value;
+
+document.getElementById(item.link)
+.addEventListener("input",()=>{
+
+btn.href =
+document.getElementById(item.link).value;
+
+});
+
+btn.addEventListener("click",()=>{
+
+clicks++;
+
+localStorage.setItem(item.btn,clicks);
+
+document.getElementById(item.count)
+innerText = clicks;
+
+total++;
+
+document.getElementById("total")
+innerText = total;
+
+});
+
+});
+
+document.getElementById("total")
+.innerText = total;
+
+</script>
+
+</body>
+</html>
