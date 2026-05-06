@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>⚡ নাইট অফার লাউঞ্জ · এক্সক্লুসিভ অ্যাক্সেস</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>💚 SPECIAL OFFER ZONE | 9 Exclusive Deals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -14,367 +16,413 @@
     }
 
     body {
-      background: #05070f;
-      font-family: 'Space Grotesk', monospace, system-ui;
+      background: radial-gradient(circle at 10% 20%, #0a0f2a, #04071a);
+      font-family: 'Inter', system-ui, sans-serif;
       padding: 2rem 1rem;
-      background-image: radial-gradient(circle at 15% 30%, rgba(10, 230, 230, 0.08) 0%, #03050a 90%);
+      min-height: 100vh;
     }
 
-    .glass-panel {
-      max-width: 1350px;
+    .main-container {
+      max-width: 1300px;
       margin: 0 auto;
-      background: rgba(5, 10, 25, 0.65);
-      backdrop-filter: blur(16px);
-      border-radius: 2rem;
-      padding: 1.6rem 1.8rem;
-      border: 1px solid rgba(0, 255, 255, 0.3);
-      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5), 0 0 18px rgba(0, 230, 230, 0.2);
     }
 
-    .top-bar {
+    /* header section */
+    .hero {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #4ade80, #22d3ee, #3b82f6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero h1 i {
+      background: none;
+      -webkit-text-fill-color: #4ade80;
+      font-size: 2rem;
+    }
+
+    .hero p {
+      color: #a0a8c0;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    /* stats card */
+    .stats-card {
+      background: rgba(20, 24, 54, 0.65);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      padding: 1rem 1.8rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 15px;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px dashed rgba(0, 255, 200, 0.4);
-      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(34, 211, 238, 0.3);
     }
 
-    .logo-area h1 {
-      font-size: 1.7rem;
-      letter-spacing: -1px;
-      font-weight: 700;
-      background: linear-gradient(120deg, #0ff, #f0f, #ffcc44);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .logo-area p {
-      font-size: 0.7rem;
-      color: #6c8eff;
-      letter-spacing: 1px;
-    }
-
-    .stats-glance {
-      background: #010418b3;
-      border-radius: 3rem;
-      padding: 0.5rem 1.2rem;
+    .total-box {
       display: flex;
       align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      border: 0.5px solid cyan;
-    }
-
-    .stat {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      gap: 12px;
+      color: #E0D6FF;
       font-weight: 600;
-      color: #bcf0ff;
     }
 
-    .stat i {
-      font-size: 1.3rem;
-      color: #0ff;
-      text-shadow: 0 0 5px cyan;
+    .total-box i {
+      font-size: 2rem;
+      color: #4ade80;
     }
 
-    .stat-number {
-      font-size: 1.9rem;
+    .total-number {
+      background: #0a0e2a;
+      padding: 6px 20px;
+      border-radius: 50px;
+      font-size: 2rem;
       font-weight: 800;
+      color: #4ade80;
       font-family: monospace;
-      background: #00000066;
-      padding: 0 10px;
-      border-radius: 40px;
-      color: #f0e45a;
+      letter-spacing: 2px;
+      border: 1px solid #4ade80;
     }
 
-    .reset-neon {
-      background: none;
-      border: 1px solid #ff44aa;
-      color: #ff99dd;
-      padding: 5px 15px;
+    .legend {
+      display: flex;
+      gap: 20px;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: #c4b5fd;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #3b2a6b;
+    }
+
+    .dot.active {
+      background: #10b981;
+      box-shadow: 0 0 6px #34d399;
+    }
+
+    /* section label */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 2rem 0 1rem 0;
+      padding-bottom: 6px;
+      border-bottom: 2px solid rgba(34, 211, 238, 0.4);
+    }
+
+    .section-title i {
+      font-size: 1.5rem;
+      color: #4ade80;
+    }
+
+    .section-title h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #f0ecff;
+    }
+
+    .badge {
+      background: #22d3ee;
+      padding: 2px 12px;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #0a0a1a;
+    }
+
+    /* button grid */
+    .btn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .offer-btn {
+      background: linear-gradient(105deg, #161c3a, #0e1230);
+      border: 1px solid #2f2b6b;
+      border-radius: 60px;
+      padding: 12px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      color: #dddaff;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .offer-btn:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(105deg, #1f2a55, #12183f);
+      border-color: #22d3ee;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+    }
+
+    .btn-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow: hidden;
+    }
+
+    .btn-left i {
+      font-size: 1.2rem;
+      color: #4ade80;
+      min-width: 28px;
+      text-align: center;
+    }
+
+    .btn-left span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .click-count {
+      background: #00000055;
       border-radius: 40px;
+      padding: 3px 12px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #4ade80;
+      border: 0.5px solid #4ade80;
+      font-family: monospace;
+    }
+
+    .offer-btn.clicked {
+      background: linear-gradient(105deg, #0f462f, #0a2c24);
+      border-color: #10b981;
+    }
+
+    .offer-btn.clicked .click-count {
+      background: #064e3b;
+      color: #4ade80;
+    }
+
+    /* reset button */
+    .reset-btn {
+      background: rgba(34, 211, 238, 0.15);
+      border: 1px solid #22d3ee;
+      border-radius: 50px;
+      padding: 6px 18px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #6ee7ff;
       cursor: pointer;
       transition: 0.2s;
-      font-weight: 500;
       display: inline-flex;
       align-items: center;
       gap: 8px;
     }
 
-    .reset-neon:hover {
-      background: #ff44aa20;
-      color: #fff;
-      border-color: cyan;
-      box-shadow: 0 0 12px #ff44aa;
-    }
-
-    .category {
-      margin: 2rem 0 1rem 0;
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      flex-wrap: wrap;
-      border-left: 4px solid cyan;
-      padding-left: 1.2rem;
-    }
-
-    .category h2 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #ccf2ff;
-    }
-
-    .category span {
-      background: #0ff22d20;
-      border-radius: 50px;
-      padding: 0px 12px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: #0ff;
-    }
-
-    .grid-3d {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
-      gap: 12px;
-      margin-top: 8px;
-    }
-
-    .offer-pulse {
-      background: #0c1126;
-      border: 1px solid #2f3b7a;
-      border-radius: 70px;
-      padding: 10px 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-decoration: none;
-      transition: all 0.2s cubic-bezier(0.2, 0.9, 0.6, 1.1);
-      backdrop-filter: blur(5px);
-    }
-
-    .offer-pulse:hover {
-      transform: scale(1.01) translateY(-2px);
-      border-color: cyan;
-      background: #0f173f;
-      box-shadow: 0 0 15px #00ffff55;
-    }
-
-    .left-icon {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #dbdbff;
-      font-weight: 500;
-      font-size: 0.85rem;
-    }
-
-    .left-icon i {
-      font-size: 1.2rem;
-      color: #ffb347;
-      width: 28px;
-      text-align: center;
-      filter: drop-shadow(0 0 4px #ffa500);
-    }
-
-    .click-badge {
-      background: #010514;
-      border-radius: 60px;
-      padding: 3px 12px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      font-family: monospace;
-      color: #0ff;
-      border: 0.5px solid cyan;
-    }
-
-    .offer-pulse.active-offer {
-      background: linear-gradient(115deg, #083b2c, #05201a);
-      border-color: #00ffc3;
-    }
-
-    .offer-pulse.active-offer .click-badge {
-      background: #0f3a2e;
-      color: #f9f06e;
-      border-color: #f0bc3e;
+    .reset-btn:hover {
+      background: #22d3ee30;
+      color: #ffffff;
+      border-color: #4ade80;
     }
 
     footer {
       margin-top: 2rem;
-      border-top: 1px dashed #2f3b7a;
-      padding-top: 1.2rem;
+      text-align: center;
+      color: #5b5d8a;
+      font-size: 0.75rem;
       display: flex;
       justify-content: space-between;
-      font-size: 0.7rem;
-      color: #7e89b0;
       flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
     }
 
-    @media (max-width: 550px) {
-      .glass-panel { padding: 1rem; }
-      .grid-3d { grid-template-columns: 1fr; }
-      .top-bar { flex-direction: column; align-items: stretch; }
-      .stats-glance { justify-content: space-between; }
+    @media (max-width: 600px) {
+      .stats-card { flex-direction: column; align-items: stretch; padding: 1rem; }
+      .btn-grid { grid-template-columns: 1fr; }
+      .offer-btn { padding: 12px 16px; }
     }
   </style>
 </head>
 <body>
-<div class="glass-panel">
-  <div class="top-bar">
-    <div class="logo-area">
-      <h1><i class="fas fa-skull-crossbones"></i> NIGHT OFFERS <i class="fas fa-bolt"></i></h1>
-      <p>⚡ exclusive access · 27 flash lanes</p>
+<div class="main-container">
+  <div class="hero">
+    <h1><i class="fas fa-crown"></i> SPECIAL OFFER ZONE <i class="fas fa-gem"></i></h1>
+    <p>9 Live Deals · Click & Claim Your Reward</p>
+  </div>
+
+  <div class="stats-card">
+    <div class="total-box">
+      <i class="fas fa-chart-line"></i>
+      <span>Total Clicks</span>
+      <div class="total-number" id="totalClicks">0</div>
     </div>
-    <div class="stats-glance">
-      <div class="stat"><i class="fas fa-chart-simple"></i> total hits <span class="stat-number" id="globalTotal">0</span></div>
-      <div class="stat"><i class="fas fa-hand-pointer"></i> active <span id="activeCount">0</span></div>
-      <div class="reset-neon" id="resetMaster"><i class="fas fa-undo-alt"></i> reset matrix</div>
+    <div class="legend">
+      <span><i class="dot"></i> Pending</span>
+      <span><i class="dot active"></i> Clicked</span>
     </div>
   </div>
 
-  <!-- category A · phantom deals -->
-  <div class="category"><h2><i class="fas fa-ghost"></i> PHANTOM DEALS</h2><span>11 fresh</span></div>
-  <div class="grid-3d" id="gridA"></div>
+  <!-- ========= GROUP 1 : EXCLUSIVE DROPS ========= -->
+  <div class="section-title">
+    <i class="fas fa-fire"></i>
+    <h2>Exclusive Drops</h2>
+    <div class="badge">Fresh</div>
+  </div>
+  <div class="btn-grid" id="group1"></div>
 
-  <!-- category B · neon elite -->
-  <div class="category"><h2><i class="fas fa-crown"></i> NEON ELITE</h2><span>premium slot</span></div>
-  <div class="grid-3d" id="gridB"></div>
+  <!-- ========= GROUP 2 : PREMIUM ACCESS ========= -->
+  <div class="section-title">
+    <i class="fas fa-crown"></i>
+    <h2>Premium Access</h2>
+    <div class="badge">Elite</div>
+  </div>
+  <div class="btn-grid" id="group2"></div>
 
-  <!-- category C · hyper value -->
-  <div class="category"><h2><i class="fas fa-charging-station"></i> HYPER VALUE</h2><span>high conversion</span></div>
-  <div class="grid-3d" id="gridC"></div>
+  <!-- ========= GROUP 3 : LIMITED DEALS ========= -->
+  <div class="section-title">
+    <i class="fas fa-bolt"></i>
+    <h2>Limited Deals</h2>
+    <div class="badge">Urgent</div>
+  </div>
+  <div class="btn-grid" id="group3"></div>
 
   <footer>
-    <span>🔒 27 offers · private lounge · clicks stored locally</span>
-    <span><i class="fas fa-database"></i> instant claim stats</span>
+    <span><i class="far fa-clock"></i> 9 Live Offers · Regularly Updated</span>
+    <div class="reset-btn" id="resetAllBtn"><i class="fas fa-trash-alt"></i> Reset Counter</div>
   </footer>
 </div>
 
 <script>
-  // =============== লিংক গুলো (আপনি এখানে আসল Adsterra লিংক বসাবেন) =================
-  const OFFER_SET = [
-    // PHANTOM (11)
-    { name: "⚡ phantom drop", icon: "bolt", link: "https://socialconventcontext.com/pqu51hfj?key=e3d29eb9e013931e709b0659e1e92c2e" },
-    { name: "🌀 vortex gift", icon: "wind", link: "https://socialconventcontext.com/bpj626q4?key=7984572ce4d11f79f3ce7cb787d20f3c" },
-    { name: "🎭 shadow box", icon: "mask", link: "https://socialconventcontext.com/x4m24xceh?key=0e5d4e45dfbc04b2665095cd4711ed79" },
-    { name: "🌟 nova star", icon: "star", link: "https://socialconventcontext.com/tnejfvyu1?key=09ddacb88ddee03115703608bb2aff77" },
-    { name: "🔥 ember rush", icon: "fire", link: "https://socialconventcontext.com/jrvgr2gsj7?key=25fd50841e0397721807361a603d8b57" },
-    { name: "🏝️ mirage island", icon: "umbrella-beach", link: "https://socialconventcontext.com/zgiicfmvt2?key=f661d15ec9f7a5646887fbe7b006c080" },
-    { name: "🍕 midnight slice", icon: "pizza-slice", link: "https://socialconventcontext.com/be4v2673m?key=0544e7827fe96548b9cb540e7c0f6ba2" },
-    { name: "🎮 neon arena", icon: "gamepad", link: "https://socialconventcontext.com/wpihc3znh4?key=7d6724c7855f70ee683fda80abff3229" },
-    { name: "💎 crypto cache", icon: "wallet", link: "https://socialconventcontext.com/k5t9z148?key=7c122115e5ee1b691718a4a5f41cfa1b" },
-    { name: "🏆 alpha pick", icon: "trophy", link: "https://socialconventcontext.com/emy7w5yb?key=fee1ec52322b97b8d3858c4a4cf70ac0" },
-    { name: "👑 obsidian vip", icon: "gem", link: "https://socialconventcontext.com/wif1te02y5?key=069f7c605de968b739cb14d5b0daa5f7" },
-
-    // NEON ELITE (8)
-    { name: "☕ black gold brew", icon: "mug-hot", link: "https://socialconventcontext.com/gjj8w61p?key=1f1b7c87e3341c743fc56212a0f86067" },
-    { name: "🍸 mocha noir", icon: "mug-hot", link: "https://socialconventcontext.com/nbdew3qhqw?key=f8c3ff33cf224df228052d7d73f05580" },
-    { name: "👑 royal flush", icon: "crown", link: "https://socialconventcontext.com/s5dka172?key=e8c9cdc77edf79ce2912ccc85528f708" },
-    { name: "📱 iphone edge", icon: "mobile-alt", link: "https://socialconventcontext.com/e3zu8b1j82?key=d5122de122cf699c7a895367ed0a1647" },
-    { name: "🏎️ hypercar drift", icon: "car", link: "https://socialconventcontext.com/s5dka172?key=e8c9cdc77edf79ce2912ccc85528f708" },
-    { name: "🏍️ R15 nitro", icon: "motorcycle", link: "https://socialconventcontext.com/zairxmg1p7?key=2e0f92796d378da49d9a6a3fa7c5ad4b" },
-    { name: "🚗 bmw blackstorm", icon: "car-side", link: "https://socialconventcontext.com/qzsr5dudf6?key=2f0cef4977e0b09480bd5b7769960157" },
-    { name: "🏡 dream mansion", icon: "home", link: "https://socialconventcontext.com/ueqzvpfm8?key=c957469b2411c59601449dd030e0db9c" },
-
-    // HYPER VALUE (8)
-    { name: "💎 gem overload", icon: "gem", link: "https://socialconventcontext.com/g5cdujm8?key=891fd44b27fbea2559d700f3c2842195" },
-    { name: "⚡ turbo nitro", icon: "tachometer-alt", link: "https://socialconventcontext.com/z7y28epmz?key=a4e9151cbc3038fe5531aef75aac3c95" },
-    { name: "💎 diamond vault", icon: "gem", link: "https://socialconventcontext.com/g3gtefp23v?key=e957fb12dbab1a748c1cc681685a4a3d" },
-    { name: "₿ crypto mine", icon: "bitcoin", link: "https://socialconventcontext.com/dw2z2fid?key=db8f0f8f8c7a1b1f6ec185f9f3fb45e0" },
-    { name: "🪙 gold vein", icon: "coins", link: "https://socialconventcontext.com/hizwb3kum6?key=21f3ab8973d56caab82fbc4a65aeb33c" },
-    { name: "🏎️ neon racer X", icon: "car", link: "https://socialconventcontext.com/sdg9ee4cw?key=370454e7b6ce9f86adc1b236e1f346b8" },
-    { name: "🎧 cyberwave", icon: "headphones", link: "https://socialconventcontext.com/i7aw2hpts?key=d7c3200e9f0a1a1f911d973171e60ee3" },
-    { name: "⌚ chrono elite", icon: "clock", link: "https://socialconventcontext.com/m8uh7upr4?key=f21fb3bb868014426d543332eff0e260" }
+  // ===================== 9 Offers with your new links =====================
+  const OFFERS = [
+    // Group 1: Exclusive Drops (3 offers)
+    { name: "⚡ Flash Strike", icon: "bolt", link: "https://breedsmuteexams.com/pxbkms6q8f?key=362829e96891fc0f4e20224f8617a9f6" },
+    { name: "🚀 Rocket Surge", icon: "rocket", link: "https://breedsmuteexams.com/rp2dmi6u53?key=86f4af450511ab7cead81ba8278bfd60" },
+    { name: "🎁 Secret Box", icon: "gift", link: "https://breedsmuteexams.com/q8hczjy3ua?key=9e50b3a32d94099d559d4e07ff9eaee9" },
+    
+    // Group 2: Premium Access (3 offers)
+    { name: "👑 Royal Elite", icon: "mug-hot", link: "https://breedsmuteexams.com/pg0g7hbz?key=0a51700c01624e101197d0cece7eec87" },
+    { name: "📱 Pro Max", icon: "mobile-alt", link: "https://breedsmuteexams.com/zsftke4a?key=459ade8ae4f24611bd363d2004d2a81a" },
+    { name: "🏎️ Speed Demon", icon: "car", link: "https://breedsmuteexams.com/qt6hxew21?key=e8a3bc01f6a586ebac0974a7c7742e57" },
+    
+    // Group 3: Limited Deals (3 offers)
+    { name: "💎 Crystal Gem", icon: "gem", link: "https://breedsmuteexams.com/ag9gajkg1?key=6326f54727c4b38a257477639b17180d" },
+    { name: "₿ Crypto Boost", icon: "bitcoin", link: "https://breedsmuteexams.com/j6tf9kyg39?key=e29f000f4fe6af39fe2d37efd54d27bb" },
+    { name: "🪙 Gold Reserve", icon: "coins", link: "https://breedsmuteexams.com/r4eah34p5?key=d1e0de2b1840d493542dd1b3866494e5" }
   ];
 
-  // বিভাজন 11+8+8
-  const GROUP_A = OFFER_SET.slice(0, 11);
-  const GROUP_B = OFFER_SET.slice(11, 19);
-  const GROUP_C = OFFER_SET.slice(19, 27);
+  // Group splits: 3 + 3 + 3 = 9
+  const GROUP_OFFERS = {
+    group1: OFFERS.slice(0, 3),
+    group2: OFFERS.slice(3, 6),
+    group3: OFFERS.slice(6, 9)
+  };
 
-  let clicks = new Array(27).fill(0);
-  const STORAGE = "night_offers_27";
+  let clickCounts = new Array(9).fill(0);
+  const STORAGE_KEY = "clickTracker9New";
 
-  function loadData() {
-    const raw = localStorage.getItem(STORAGE);
-    if (raw) {
+  function loadCounts() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
       try {
-        const arr = JSON.parse(raw);
-        if (arr.length === 27) clicks = arr;
+        let arr = JSON.parse(saved);
+        if (arr.length === 9) clickCounts = arr;
       } catch(e) {}
     }
   }
 
-  function persist() {
-    localStorage.setItem(STORAGE, JSON.stringify(clicks));
+  function saveCounts() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(clickCounts));
   }
 
-  function totalCount() {
-    return clicks.reduce((a,b) => a+b, 0);
+  function updateTotalDisplay() {
+    const total = clickCounts.reduce((a,b) => a+b, 0);
+    document.getElementById("totalClicks").innerText = total;
   }
 
-  function activeOffers() {
-    return clicks.filter(c => c > 0).length;
-  }
-
-  function renderAll() {
-    const containerA = document.getElementById("gridA");
-    const containerB = document.getElementById("gridB");
-    const containerC = document.getElementById("gridC");
-    containerA.innerHTML = "";
-    containerB.innerHTML = "";
-    containerC.innerHTML = "";
-
-    let idx = 0;
-    for (let i = 0; i < GROUP_A.length; i++) renderBtn(GROUP_A[i], idx++, containerA);
-    for (let i = 0; i < GROUP_B.length; i++) renderBtn(GROUP_B[i], idx++, containerB);
-    for (let i = 0; i < GROUP_C.length; i++) renderBtn(GROUP_C[i], idx++, containerC);
-
-    document.getElementById("globalTotal").innerText = totalCount();
-    document.getElementById("activeCount").innerText = activeOffers();
-  }
-
-  function renderBtn(offer, position, parent) {
-    const count = clicks[position];
-    const isActive = count > 0;
+  function renderButton(offer, idx) {
+    const count = clickCounts[idx];
+    const isClicked = count > 0;
     const btn = document.createElement("a");
     btn.href = offer.link;
     btn.target = "_blank";
     btn.rel = "noopener noreferrer";
-    btn.className = "offer-pulse" + (isActive ? " active-offer" : "");
+    btn.className = "offer-btn" + (isClicked ? " clicked" : "");
+    btn.setAttribute("data-idx", idx);
     
     btn.innerHTML = `
-      <div class="left-icon">
+      <div class="btn-left">
         <i class="fas fa-${offer.icon}"></i>
         <span>${offer.name}</span>
       </div>
-      <div class="click-badge">${count}</div>
+      <div class="click-count">${count}</div>
     `;
-    
+
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
-      clicks[position] += 1;
-      persist();
-      renderAll();
+      clickCounts[idx] += 1;
+      saveCounts();
+      updateTotalDisplay();
+      renderGroups();
     });
-    parent.appendChild(btn);
+
+    return btn;
   }
 
-  function resetAll() {
-    for (let i = 0; i < clicks.length; i++) clicks[i] = 0;
-    persist();
-    renderAll();
+  function renderGroups() {
+    const group1Container = document.getElementById("group1");
+    const group2Container = document.getElementById("group2");
+    const group3Container = document.getElementById("group3");
+    group1Container.innerHTML = "";
+    group2Container.innerHTML = "";
+    group3Container.innerHTML = "";
+
+    let globalIdx = 0;
+    for (let i = 0; i < GROUP_OFFERS.group1.length; i++) {
+      group1Container.appendChild(renderButton(GROUP_OFFERS.group1[i], globalIdx++));
+    }
+    for (let i = 0; i < GROUP_OFFERS.group2.length; i++) {
+      group2Container.appendChild(renderButton(GROUP_OFFERS.group2[i], globalIdx++));
+    }
+    for (let i = 0; i < GROUP_OFFERS.group3.length; i++) {
+      group3Container.appendChild(renderButton(GROUP_OFFERS.group3[i], globalIdx++));
+    }
+    updateTotalDisplay();
   }
 
-  document.getElementById("resetMaster").addEventListener("click", resetAll);
-  loadData();
-  renderAll();
+  function resetCounters() {
+    for (let i = 0; i < clickCounts.length; i++) clickCounts[i] = 0;
+    saveCounts();
+    renderGroups();
+  }
+
+  document.getElementById("resetAllBtn").addEventListener("click", resetCounters);
+  loadCounts();
+  renderGroups();
 </script>
 </body>
 </html>
