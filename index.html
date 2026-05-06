@@ -1,328 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Rewards Hub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>⚡ নাইট অফার লাউঞ্জ · এক্সক্লুসিভ অ্যাক্সেস</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    body {
+      background: #05070f;
+      font-family: 'Space Grotesk', monospace, system-ui;
+      padding: 2rem 1rem;
+      background-image: radial-gradient(circle at 15% 30%, rgba(10, 230, 230, 0.08) 0%, #03050a 90%);
+    }
 
-<style>
+    .glass-panel {
+      max-width: 1350px;
+      margin: 0 auto;
+      background: rgba(5, 10, 25, 0.65);
+      backdrop-filter: blur(16px);
+      border-radius: 2rem;
+      padding: 1.6rem 1.8rem;
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5), 0 0 18px rgba(0, 230, 230, 0.2);
+    }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px dashed rgba(0, 255, 200, 0.4);
+      padding-bottom: 1rem;
+    }
 
-body{
-    background:
-    linear-gradient(135deg,#0f172a,#1e1b4b,#111827);
-    min-height:100vh;
-    padding:25px;
-    color:white;
-}
+    .logo-area h1 {
+      font-size: 1.7rem;
+      letter-spacing: -1px;
+      font-weight: 700;
+      background: linear-gradient(120deg, #0ff, #f0f, #ffcc44);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-.container{
-    max-width:1200px;
-    margin:auto;
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
-    backdrop-filter:blur(14px);
-    border-radius:30px;
-    padding:30px;
-    box-shadow:0 0 40px rgba(0,0,0,0.4);
-}
+    .logo-area p {
+      font-size: 0.7rem;
+      color: #6c8eff;
+      letter-spacing: 1px;
+    }
 
-.title{
-    text-align:center;
-    font-size:42px;
-    font-weight:bold;
-    margin-bottom:10px;
-    background:linear-gradient(90deg,#60a5fa,#a78bfa,#f472b6);
-    -webkit-background-clip:text;
-    color:transparent;
-}
+    .stats-glance {
+      background: #010418b3;
+      border-radius: 3rem;
+      padding: 0.5rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border: 0.5px solid cyan;
+    }
 
-.subtitle{
-    text-align:center;
-    color:#cbd5e1;
-    margin-bottom:30px;
-}
+    .stat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: #bcf0ff;
+    }
 
-/* ===== EDIT LINKS SECTION ===== */
+    .stat i {
+      font-size: 1.3rem;
+      color: #0ff;
+      text-shadow: 0 0 5px cyan;
+    }
 
-.link-editor{
-    background:#0f172a;
-    border:1px dashed #64748b;
-    padding:20px;
-    border-radius:20px;
-    margin-bottom:35px;
-}
+    .stat-number {
+      font-size: 1.9rem;
+      font-weight: 800;
+      font-family: monospace;
+      background: #00000066;
+      padding: 0 10px;
+      border-radius: 40px;
+      color: #f0e45a;
+    }
 
-.link-editor h2{
-    margin-bottom:15px;
-    color:#38bdf8;
-}
+    .reset-neon {
+      background: none;
+      border: 1px solid #ff44aa;
+      color: #ff99dd;
+      padding: 5px 15px;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: 0.2s;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-.link-box{
-    margin-bottom:12px;
-}
+    .reset-neon:hover {
+      background: #ff44aa20;
+      color: #fff;
+      border-color: cyan;
+      box-shadow: 0 0 12px #ff44aa;
+    }
 
-.link-box label{
-    display:block;
-    margin-bottom:5px;
-    color:#cbd5e1;
-    font-size:14px;
-}
+    .category {
+      margin: 2rem 0 1rem 0;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+      border-left: 4px solid cyan;
+      padding-left: 1.2rem;
+    }
 
-.link-box input{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:12px;
-    background:#1e293b;
-    color:white;
-}
+    .category h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #ccf2ff;
+    }
 
-/* ===== BUTTON GRID ===== */
+    .category span {
+      background: #0ff22d20;
+      border-radius: 50px;
+      padding: 0px 12px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #0ff;
+    }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
-}
+    .grid-3d {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
 
-.card-btn{
-    background:
-    linear-gradient(135deg,#312e81,#1e293b);
-    padding:18px;
-    border-radius:20px;
-    text-decoration:none;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    transition:.25s;
-    border:1px solid rgba(255,255,255,0.08);
-    position:relative;
-    overflow:hidden;
-}
+    .offer-pulse {
+      background: #0c1126;
+      border: 1px solid #2f3b7a;
+      border-radius: 70px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.2, 0.9, 0.6, 1.1);
+      backdrop-filter: blur(5px);
+    }
 
-.card-btn:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(99,102,241,.4);
-}
+    .offer-pulse:hover {
+      transform: scale(1.01) translateY(-2px);
+      border-color: cyan;
+      background: #0f173f;
+      box-shadow: 0 0 15px #00ffff55;
+    }
 
-.left{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
+    .left-icon {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #dbdbff;
+      font-weight: 500;
+      font-size: 0.85rem;
+    }
 
-.left i{
-    font-size:22px;
-    color:#38bdf8;
-}
+    .left-icon i {
+      font-size: 1.2rem;
+      color: #ffb347;
+      width: 28px;
+      text-align: center;
+      filter: drop-shadow(0 0 4px #ffa500);
+    }
 
-.counter{
-    background:#0f172a;
-    padding:6px 12px;
-    border-radius:999px;
-    font-size:13px;
-    color:#facc15;
-    border:1px solid #475569;
-}
+    .click-badge {
+      background: #010514;
+      border-radius: 60px;
+      padding: 3px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      font-family: monospace;
+      color: #0ff;
+      border: 0.5px solid cyan;
+    }
 
-/* ===== TOTAL ===== */
+    .offer-pulse.active-offer {
+      background: linear-gradient(115deg, #083b2c, #05201a);
+      border-color: #00ffc3;
+    }
 
-.total-box{
-    margin:25px 0;
-    text-align:center;
-    font-size:24px;
-    color:#facc15;
-}
+    .offer-pulse.active-offer .click-badge {
+      background: #0f3a2e;
+      color: #f9f06e;
+      border-color: #f0bc3e;
+    }
 
-@media(max-width:700px){
+    footer {
+      margin-top: 2rem;
+      border-top: 1px dashed #2f3b7a;
+      padding-top: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: #7e89b0;
+      flex-wrap: wrap;
+    }
 
-.title{
-    font-size:30px;
-}
-
-.container{
-    padding:20px;
-}
-
-}
-
-</style>
+    @media (max-width: 550px) {
+      .glass-panel { padding: 1rem; }
+      .grid-3d { grid-template-columns: 1fr; }
+      .top-bar { flex-direction: column; align-items: stretch; }
+      .stats-glance { justify-content: space-between; }
+    }
+  </style>
 </head>
 <body>
+<div class="glass-panel">
+  <div class="top-bar">
+    <div class="logo-area">
+      <h1><i class="fas fa-skull-crossbones"></i> NIGHT OFFERS <i class="fas fa-bolt"></i></h1>
+      <p>⚡ exclusive access · 27 flash lanes</p>
+    </div>
+    <div class="stats-glance">
+      <div class="stat"><i class="fas fa-chart-simple"></i> total hits <span class="stat-number" id="globalTotal">0</span></div>
+      <div class="stat"><i class="fas fa-hand-pointer"></i> active <span id="activeCount">0</span></div>
+      <div class="reset-neon" id="resetMaster"><i class="fas fa-undo-alt"></i> reset matrix</div>
+    </div>
+  </div>
 
-<div class="container">
+  <!-- category A · phantom deals -->
+  <div class="category"><h2><i class="fas fa-ghost"></i> PHANTOM DEALS</h2><span>11 fresh</span></div>
+  <div class="grid-3d" id="gridA"></div>
 
-<div class="title">
-<i class="fa-solid fa-bolt"></i>
-Rewards Center
-</div>
+  <!-- category B · neon elite -->
+  <div class="category"><h2><i class="fas fa-crown"></i> NEON ELITE</h2><span>premium slot</span></div>
+  <div class="grid-3d" id="gridB"></div>
 
-<div class="subtitle">
-Premium Deals • Instant Access • Modern UI
-</div>
+  <!-- category C · hyper value -->
+  <div class="category"><h2><i class="fas fa-charging-station"></i> HYPER VALUE</h2><span>high conversion</span></div>
+  <div class="grid-3d" id="gridC"></div>
 
-<!-- ============================= -->
-<!-- 🔥 EDIT YOUR LINKS HERE 🔥 -->
-<!-- শুধু নিচের link পরিবর্তন করবেন -->
-<!-- ============================= -->
-
-<div class="link-editor">
-
-<h2>🔗 Edit Links Here</h2>
-
-<div class="link-box">
-<label>Offer 1 Link</label>
-<input type="text" id="link1"
-value="https://example.com">
-</div>
-
-<div class="link-box">
-<label>Offer 2 Link</label>
-<input type="text" id="link2"
-value="https://example.com">
-</div>
-
-<div class="link-box">
-<label>Offer 3 Link</label>
-<input type="text" id="link3"
-value="https://example.com">
-</div>
-
-<div class="link-box">
-<label>Offer 4 Link</label>
-<input type="text" id="link4"
-value="https://example.com">
-</div>
-
-</div>
-
-<div class="total-box">
-🔥 Total Clicks:
-<span id="total">0</span>
-</div>
-
-<div class="grid">
-
-<a class="card-btn" id="btn1" target="_blank">
-<div class="left">
-<i class="fa-solid fa-gift"></i>
-<span>Special Reward</span>
-</div>
-<div class="counter" id="count1">0</div>
-</a>
-
-<a class="card-btn" id="btn2" target="_blank">
-<div class="left">
-<i class="fa-solid fa-fire"></i>
-<span>Hot Bonus</span>
-</div>
-<div class="counter" id="count2">0</div>
-</a>
-
-<a class="card-btn" id="btn3" target="_blank">
-<div class="left">
-<i class="fa-solid fa-star"></i>
-<span>VIP Access</span>
-</div>
-<div class="counter" id="count3">0</div>
-</a>
-
-<a class="card-btn" id="btn4" target="_blank">
-<div class="left">
-<i class="fa-solid fa-crown"></i>
-<span>Premium Loot</span>
-</div>
-<div class="counter" id="count4">0</div>
-</a>
-
-</div>
-
+  <footer>
+    <span>🔒 27 offers · private lounge · clicks stored locally</span>
+    <span><i class="fas fa-database"></i> instant claim stats</span>
+  </footer>
 </div>
 
 <script>
+  // =============== লিংক গুলো (আপনি এখানে আসল Adsterra লিংক বসাবেন) =================
+  const OFFER_SET = [
+    // PHANTOM (11)
+    { name: "⚡ phantom drop", icon: "bolt", link: "https://socialconventcontext.com/pqu51hfj?key=e3d29eb9e013931e709b0659e1e92c2e" },
+    { name: "🌀 vortex gift", icon: "wind", link: "https://socialconventcontext.com/bpj626q4?key=7984572ce4d11f79f3ce7cb787d20f3c" },
+    { name: "🎭 shadow box", icon: "mask", link: "https://socialconventcontext.com/x4m24xceh?key=0e5d4e45dfbc04b2665095cd4711ed79" },
+    { name: "🌟 nova star", icon: "star", link: "https://socialconventcontext.com/tnejfvyu1?key=09ddacb88ddee03115703608bb2aff77" },
+    { name: "🔥 ember rush", icon: "fire", link: "https://socialconventcontext.com/jrvgr2gsj7?key=25fd50841e0397721807361a603d8b57" },
+    { name: "🏝️ mirage island", icon: "umbrella-beach", link: "https://socialconventcontext.com/zgiicfmvt2?key=f661d15ec9f7a5646887fbe7b006c080" },
+    { name: "🍕 midnight slice", icon: "pizza-slice", link: "https://socialconventcontext.com/be4v2673m?key=0544e7827fe96548b9cb540e7c0f6ba2" },
+    { name: "🎮 neon arena", icon: "gamepad", link: "https://socialconventcontext.com/wpihc3znh4?key=7d6724c7855f70ee683fda80abff3229" },
+    { name: "💎 crypto cache", icon: "wallet", link: "https://socialconventcontext.com/k5t9z148?key=7c122115e5ee1b691718a4a5f41cfa1b" },
+    { name: "🏆 alpha pick", icon: "trophy", link: "https://socialconventcontext.com/emy7w5yb?key=fee1ec52322b97b8d3858c4a4cf70ac0" },
+    { name: "👑 obsidian vip", icon: "gem", link: "https://socialconventcontext.com/wif1te02y5?key=069f7c605de968b739cb14d5b0daa5f7" },
 
-const buttons = [
-{
-btn:"btn1",
-link:"link1",
-count:"count1"
-},
-{
-btn:"btn2",
-link:"link2",
-count:"count2"
-},
-{
-btn:"btn3",
-link:"link3",
-count:"count3"
-},
-{
-btn:"btn4",
-link:"link4",
-count:"count4"
-}
-];
+    // NEON ELITE (8)
+    { name: "☕ black gold brew", icon: "mug-hot", link: "https://socialconventcontext.com/gjj8w61p?key=1f1b7c87e3341c743fc56212a0f86067" },
+    { name: "🍸 mocha noir", icon: "mug-hot", link: "https://socialconventcontext.com/nbdew3qhqw?key=f8c3ff33cf224df228052d7d73f05580" },
+    { name: "👑 royal flush", icon: "crown", link: "https://socialconventcontext.com/s5dka172?key=e8c9cdc77edf79ce2912ccc85528f708" },
+    { name: "📱 iphone edge", icon: "mobile-alt", link: "https://socialconventcontext.com/e3zu8b1j82?key=d5122de122cf699c7a895367ed0a1647" },
+    { name: "🏎️ hypercar drift", icon: "car", link: "https://socialconventcontext.com/s5dka172?key=e8c9cdc77edf79ce2912ccc85528f708" },
+    { name: "🏍️ R15 nitro", icon: "motorcycle", link: "https://socialconventcontext.com/zairxmg1p7?key=2e0f92796d378da49d9a6a3fa7c5ad4b" },
+    { name: "🚗 bmw blackstorm", icon: "car-side", link: "https://socialconventcontext.com/qzsr5dudf6?key=2f0cef4977e0b09480bd5b7769960157" },
+    { name: "🏡 dream mansion", icon: "home", link: "https://socialconventcontext.com/ueqzvpfm8?key=c957469b2411c59601449dd030e0db9c" },
 
-let total = 0;
+    // HYPER VALUE (8)
+    { name: "💎 gem overload", icon: "gem", link: "https://socialconventcontext.com/g5cdujm8?key=891fd44b27fbea2559d700f3c2842195" },
+    { name: "⚡ turbo nitro", icon: "tachometer-alt", link: "https://socialconventcontext.com/z7y28epmz?key=a4e9151cbc3038fe5531aef75aac3c95" },
+    { name: "💎 diamond vault", icon: "gem", link: "https://socialconventcontext.com/g3gtefp23v?key=e957fb12dbab1a748c1cc681685a4a3d" },
+    { name: "₿ crypto mine", icon: "bitcoin", link: "https://socialconventcontext.com/dw2z2fid?key=db8f0f8f8c7a1b1f6ec185f9f3fb45e0" },
+    { name: "🪙 gold vein", icon: "coins", link: "https://socialconventcontext.com/hizwb3kum6?key=21f3ab8973d56caab82fbc4a65aeb33c" },
+    { name: "🏎️ neon racer X", icon: "car", link: "https://socialconventcontext.com/sdg9ee4cw?key=370454e7b6ce9f86adc1b236e1f346b8" },
+    { name: "🎧 cyberwave", icon: "headphones", link: "https://socialconventcontext.com/i7aw2hpts?key=d7c3200e9f0a1a1f911d973171e60ee3" },
+    { name: "⌚ chrono elite", icon: "clock", link: "https://socialconventcontext.com/m8uh7upr4?key=f21fb3bb868014426d543332eff0e260" }
+  ];
 
-buttons.forEach((item,index)=>{
+  // বিভাজন 11+8+8
+  const GROUP_A = OFFER_SET.slice(0, 11);
+  const GROUP_B = OFFER_SET.slice(11, 19);
+  const GROUP_C = OFFER_SET.slice(19, 27);
 
-let clicks =
-localStorage.getItem(item.btn) || 0;
+  let clicks = new Array(27).fill(0);
+  const STORAGE = "night_offers_27";
 
-document.getElementById(item.count)
-innerText = clicks;
+  function loadData() {
+    const raw = localStorage.getItem(STORAGE);
+    if (raw) {
+      try {
+        const arr = JSON.parse(raw);
+        if (arr.length === 27) clicks = arr;
+      } catch(e) {}
+    }
+  }
 
-total += Number(clicks);
+  function persist() {
+    localStorage.setItem(STORAGE, JSON.stringify(clicks));
+  }
 
-const btn =
-document.getElementById(item.btn);
+  function totalCount() {
+    return clicks.reduce((a,b) => a+b, 0);
+  }
 
-btn.href =
-document.getElementById(item.link).value;
+  function activeOffers() {
+    return clicks.filter(c => c > 0).length;
+  }
 
-document.getElementById(item.link)
-.addEventListener("input",()=>{
+  function renderAll() {
+    const containerA = document.getElementById("gridA");
+    const containerB = document.getElementById("gridB");
+    const containerC = document.getElementById("gridC");
+    containerA.innerHTML = "";
+    containerB.innerHTML = "";
+    containerC.innerHTML = "";
 
-btn.href =
-document.getElementById(item.link).value;
+    let idx = 0;
+    for (let i = 0; i < GROUP_A.length; i++) renderBtn(GROUP_A[i], idx++, containerA);
+    for (let i = 0; i < GROUP_B.length; i++) renderBtn(GROUP_B[i], idx++, containerB);
+    for (let i = 0; i < GROUP_C.length; i++) renderBtn(GROUP_C[i], idx++, containerC);
 
-});
+    document.getElementById("globalTotal").innerText = totalCount();
+    document.getElementById("activeCount").innerText = activeOffers();
+  }
 
-btn.addEventListener("click",()=>{
+  function renderBtn(offer, position, parent) {
+    const count = clicks[position];
+    const isActive = count > 0;
+    const btn = document.createElement("a");
+    btn.href = offer.link;
+    btn.target = "_blank";
+    btn.rel = "noopener noreferrer";
+    btn.className = "offer-pulse" + (isActive ? " active-offer" : "");
+    
+    btn.innerHTML = `
+      <div class="left-icon">
+        <i class="fas fa-${offer.icon}"></i>
+        <span>${offer.name}</span>
+      </div>
+      <div class="click-badge">${count}</div>
+    `;
+    
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      clicks[position] += 1;
+      persist();
+      renderAll();
+    });
+    parent.appendChild(btn);
+  }
 
-clicks++;
+  function resetAll() {
+    for (let i = 0; i < clicks.length; i++) clicks[i] = 0;
+    persist();
+    renderAll();
+  }
 
-localStorage.setItem(item.btn,clicks);
-
-document.getElementById(item.count)
-innerText = clicks;
-
-total++;
-
-document.getElementById("total")
-innerText = total;
-
-});
-
-});
-
-document.getElementById("total")
-.innerText = total;
-
+  document.getElementById("resetMaster").addEventListener("click", resetAll);
+  loadData();
+  renderAll();
 </script>
-
 </body>
 </html>
