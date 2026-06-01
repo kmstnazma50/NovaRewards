@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>💚 SPECIAL OFFER ZONE | 9 Exclusive Deals</title>
+  <title>Premium Offer Vault | 30 Exclusive Deals</title>
+  <meta name="description" content="Claim your exclusive offers from our premium deal vault. 30 live deals across 30 tiers. Click and collect your rewards instantly.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -16,27 +17,108 @@
     }
 
     body {
-      background: radial-gradient(circle at 10% 20%, #0a0f2a, #04071a);
+      background: radial-gradient(circle at 20% 30%, #0a1f0a, #0a0c1a, #02040f);
       font-family: 'Inter', system-ui, sans-serif;
-      padding: 2rem 1rem;
+      padding: 2rem 1.5rem;
       min-height: 100vh;
     }
 
     .main-container {
-      max-width: 1300px;
+      max-width: 1400px;
       margin: 0 auto;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
 
-    /* header section */
+    .content-area {
+      flex: 3;
+      min-width: 250px;
+    }
+
+    .level-sidebar {
+      flex: 0.9;
+      min-width: 200px;
+      position: sticky;
+      top: 2rem;
+      align-self: flex-start;
+      background: rgba(20, 25, 35, 0.85);
+      backdrop-filter: blur(16px);
+      border-radius: 2rem;
+      padding: 1.5rem 1rem;
+      border: 1px solid rgba(251, 146, 60, 0.5);
+      height: fit-content;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .level-sidebar h3 {
+      color: #ffd6a5;
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .level-sidebar h3 i {
+      color: #4ade80;
+    }
+
+    .triggers-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .level-btn {
+      background: linear-gradient(105deg, #1a1e32, #11152a);
+      border: 1px solid #fb923c;
+      border-radius: 60px;
+      padding: 8px 0;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: #ffdead;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .level-btn i {
+      font-size: 0.75rem;
+      color: #4ade80;
+    }
+
+    .level-btn:hover {
+      background: linear-gradient(105deg, #2a2f4a, #1a1f38);
+      border-color: #f97316;
+      transform: translateY(-2px);
+    }
+
+    .level-btn.active {
+      background: linear-gradient(105deg, #ea580c, #c2410c);
+      border-color: #fdba74;
+      color: white;
+    }
+
+    .level-btn.active i {
+      color: #fef3c7;
+    }
+
     .hero {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     .hero h1 {
       font-size: 2.2rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #4ade80, #22d3ee, #3b82f6);
+      background: linear-gradient(135deg, #fb923c, #f97316, #4ade80, #fdba74);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -44,25 +126,47 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 550px) {
+      .hero h1 {
+        font-size: 1.6rem;
+        gap: 8px;
+      }
+      .hero h1 i {
+        font-size: 1.4rem;
+      }
+    }
+    @media (max-width: 400px) {
+      .hero h1 {
+        font-size: 1.3rem;
+        gap: 6px;
+      }
+      .hero h1 i {
+        font-size: 1.1rem;
+      }
     }
 
     .hero h1 i {
       background: none;
-      -webkit-text-fill-color: #4ade80;
+      -webkit-text-fill-color: #f97316;
       font-size: 2rem;
     }
 
-    .hero p {
-      color: #a0a8c0;
-      margin-top: 8px;
-      font-weight: 500;
+    .bottom-description {
+      text-align: center;
+      margin: 1rem 0 1.5rem 0;
+      color: #86efac;
+      font-size: 0.9rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    /* stats card */
     .stats-card {
-      background: rgba(20, 24, 54, 0.65);
+      background: rgba(10, 14, 30, 0.7);
       backdrop-filter: blur(12px);
       border-radius: 2rem;
       padding: 1rem 1.8rem;
@@ -71,15 +175,16 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 15px;
-      margin-bottom: 2rem;
-      border: 1px solid rgba(34, 211, 238, 0.3);
+      margin-top: 2rem;
+      margin-bottom: 0;
+      border: 1px solid rgba(74, 222, 128, 0.4);
     }
 
     .total-box {
       display: flex;
       align-items: center;
       gap: 12px;
-      color: #E0D6FF;
+      color: #fcd9b6;
       font-weight: 600;
     }
 
@@ -89,12 +194,12 @@
     }
 
     .total-number {
-      background: #0a0e2a;
+      background: #0a0e20;
       padding: 6px 20px;
       border-radius: 50px;
       font-size: 2rem;
       font-weight: 800;
-      color: #4ade80;
+      color: #fbbf24;
       font-family: monospace;
       letter-spacing: 2px;
       border: 1px solid #4ade80;
@@ -110,14 +215,14 @@
       align-items: center;
       gap: 6px;
       font-size: 0.85rem;
-      color: #c4b5fd;
+      color: #cbd5e1;
     }
 
     .dot {
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: #3b2a6b;
+      background: #2d3a5e;
     }
 
     .dot.active {
@@ -125,14 +230,13 @@
       box-shadow: 0 0 6px #34d399;
     }
 
-    /* section label */
     .section-title {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin: 2rem 0 1rem 0;
+      margin: 1.5rem 0 1rem 0;
       padding-bottom: 6px;
-      border-bottom: 2px solid rgba(34, 211, 238, 0.4);
+      border-bottom: 2px solid rgba(251, 146, 60, 0.5);
     }
 
     .section-title i {
@@ -143,11 +247,11 @@
     .section-title h2 {
       font-size: 1.4rem;
       font-weight: 700;
-      color: #f0ecff;
+      color: #fee3c0;
     }
 
     .badge {
-      background: #22d3ee;
+      background: #f97316;
       padding: 2px 12px;
       border-radius: 50px;
       font-size: 0.7rem;
@@ -155,57 +259,128 @@
       color: #0a0a1a;
     }
 
-    /* button grid */
-    .btn-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 14px;
+    .pagination-controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 1rem 0;
+    }
+    .page-nav-btn {
+      background: linear-gradient(105deg, #1a1e32, #11152a);
+      border: 1px solid #fb923c;
+      border-radius: 60px;
+      padding: 8px 20px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #ffdead;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .page-nav-btn:hover {
+      background: linear-gradient(105deg, #2a2f4a, #1a1f38);
+      border-color: #f97316;
+      transform: translateY(-2px);
+    }
+    .page-nav-btn.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .page-info {
+      color: #86efac;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
     }
 
-    .offer-btn {
-      background: linear-gradient(105deg, #161c3a, #0e1230);
-      border: 1px solid #2f2b6b;
+    .btn-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      max-height: 60vh;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+
+    .btn-grid::-webkit-scrollbar {
+      width: 6px;
+    }
+    .btn-grid::-webkit-scrollbar-track {
+      background: #1e253e;
+      border-radius: 10px;
+    }
+    .btn-grid::-webkit-scrollbar-thumb {
+      background: #4ade80;
+      border-radius: 10px;
+    }
+
+    .offer-card {
+      background: linear-gradient(105deg, #13182e, #0c1022);
+      border: 1px solid #3b3f66;
+      border-radius: 1.5rem;
+      padding: 1rem;
+      transition: all 0.25s ease;
+    }
+    .offer-card:hover {
+      transform: translateY(-2px);
+      border-color: #4ade80;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    }
+    .iframe-wrapper {
+      margin-bottom: 1rem;
+      overflow: hidden;
+      border-radius: 12px;
+      line-height: 0;
+    }
+    .iframe-wrapper iframe {
+      width: 100%;
+      border: none;
+      overflow: hidden;
+      border-radius: 12px;
+      display: block;
+    }
+    .claim-btn {
+      background: linear-gradient(105deg, #1a1e32, #11152a);
+      border: 1px solid #fb923c;
       border-radius: 60px;
-      padding: 12px 12px;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
-      text-decoration: none;
+      gap: 12px;
+      cursor: pointer;
       transition: all 0.25s ease;
-      color: #dddaff;
+      color: #e2e8f0;
       font-weight: 600;
       font-size: 0.9rem;
     }
-
-    .offer-btn:hover {
-      transform: translateY(-3px);
-      background: linear-gradient(105deg, #1f2a55, #12183f);
-      border-color: #22d3ee;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+    .claim-btn:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(105deg, #1c2340, #12172e);
+      border-color: #4ade80;
     }
-
-    .btn-left {
+    .claim-btn.disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      pointer-events: none;
+      background: linear-gradient(105deg, #1a2a1a, #0f1f0f);
+      border-color: #4a6a4a;
+    }
+    .claim-btn-left {
       display: flex;
       align-items: center;
       gap: 10px;
-      overflow: hidden;
+      flex: 1;
     }
-
-    .btn-left i {
+    .claim-btn-left i {
       font-size: 1.2rem;
-      color: #4ade80;
+      color: #f97316;
       min-width: 28px;
-      text-align: center;
     }
-
-    .btn-left span {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .click-count {
+    .claim-count {
       background: #00000055;
       border-radius: 40px;
       padding: 3px 12px;
@@ -214,44 +389,38 @@
       color: #4ade80;
       border: 0.5px solid #4ade80;
       font-family: monospace;
+      min-width: 50px;
+      text-align: center;
     }
-
-    .offer-btn.clicked {
-      background: linear-gradient(105deg, #0f462f, #0a2c24);
-      border-color: #10b981;
-    }
-
-    .offer-btn.clicked .click-count {
+    .claim-btn.clicked .claim-count {
       background: #064e3b;
-      color: #4ade80;
+      color: #facc15;
     }
 
-    /* reset button */
     .reset-btn {
-      background: rgba(34, 211, 238, 0.15);
-      border: 1px solid #22d3ee;
+      background: rgba(249, 115, 22, 0.15);
+      border: 1px solid #f97316;
       border-radius: 50px;
       padding: 6px 18px;
       font-size: 0.85rem;
       font-weight: 500;
-      color: #6ee7ff;
+      color: #fdba74;
       cursor: pointer;
       transition: 0.2s;
       display: inline-flex;
       align-items: center;
       gap: 8px;
     }
-
     .reset-btn:hover {
-      background: #22d3ee30;
+      background: #f9731630;
       color: #ffffff;
       border-color: #4ade80;
     }
 
     footer {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       text-align: center;
-      color: #5b5d8a;
+      color: #6b9e6b;
       font-size: 0.75rem;
       display: flex;
       justify-content: space-between;
@@ -260,169 +429,381 @@
       align-items: center;
     }
 
-    @media (max-width: 600px) {
-      .stats-card { flex-direction: column; align-items: stretch; padding: 1rem; }
-      .btn-grid { grid-template-columns: 1fr; }
-      .offer-btn { padding: 12px 16px; }
+    @media (max-width: 850px) {
+      .main-container { flex-direction: column; }
+      .level-sidebar { display: none; }
+      .mobile-tier-bar {
+        display: block;
+        background: rgba(20, 25, 35, 0.85);
+        backdrop-filter: blur(16px);
+        border-radius: 1.5rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(251, 146, 60, 0.5);
+      }
+      .mobile-tier-bar h3 {
+        color: #ffd6a5;
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .mobile-triggers {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+      }
+      .mobile-tier-btn {
+        background: linear-gradient(105deg, #1a1e32, #11152a);
+        border: 1px solid #fb923c;
+        border-radius: 60px;
+        padding: 6px 0;
+        font-weight: 700;
+        font-size: 0.65rem;
+        color: #ffdead;
+        cursor: pointer;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+      }
+      .mobile-tier-btn i { font-size: 0.65rem; color: #4ade80; }
+      .mobile-tier-btn.active {
+        background: linear-gradient(105deg, #ea580c, #c2410c);
+        border-color: #fdba74;
+        color: white;
+      }
+      .btn-grid { max-height: 45vh; }
+      .stats-card { margin-top: 1.5rem; }
+    }
+    @media (min-width: 851px) {
+      .mobile-tier-bar { display: none; }
     }
   </style>
 </head>
 <body>
 <div class="main-container">
-  <div class="hero">
-    <h1><i class="fas fa-crown"></i> SPECIAL OFFER ZONE <i class="fas fa-gem"></i></h1>
-    <p>9 Live Deals · Click & Claim Your Reward</p>
-  </div>
-
-  <div class="stats-card">
-    <div class="total-box">
-      <i class="fas fa-chart-line"></i>
-      <span>Total Clicks</span>
-      <div class="total-number" id="totalClicks">0</div>
+  <div class="content-area">
+    <div class="hero">
+      <h1><i class="fas fa-crown"></i> PREMIUM OFFER VAULT <i class="fas fa-gem"></i></h1>
     </div>
-    <div class="legend">
-      <span><i class="dot"></i> Pending</span>
-      <span><i class="dot active"></i> Clicked</span>
+
+    <div class="mobile-tier-bar" id="mobileTierBar">
+      <h3><i class="fas fa-layer-group"></i> Select Your Offer</h3>
+      <div class="mobile-triggers" id="mobileTriggers"></div>
+      <div class="pagination-controls" style="margin-top: 12px;">
+        <div class="page-nav-btn" id="mobilePrevBtn"><i class="fas fa-chevron-left"></i> Prev</div>
+        <div class="page-info" id="mobilePageInfo">Page 1/3</div>
+        <div class="page-nav-btn" id="mobileNextBtn">Next <i class="fas fa-chevron-right"></i></div>
+      </div>
+    </div>
+
+    <div class="section-title" id="dynamicSectionTitle">
+      <i class="fas fa-chart-simple"></i>
+      <h2 id="levelName">Offer 1 · Premium Access</h2>
+      <div class="badge" id="levelBadge">1 Offer</div>
+    </div>
+    <div id="offersGrid" class="btn-grid"></div>
+
+    <div class="stats-card">
+      <div class="total-box">
+        <i class="fas fa-chart-line"></i>
+        <span>Total Clicks</span>
+        <div class="total-number" id="totalClicks">0</div>
+      </div>
+      <div class="legend">
+        <span><i class="dot"></i> Pending</span>
+        <span><i class="dot active"></i> Claimed</span>
+      </div>
+    </div>
+
+    <div class="bottom-description">
+      <i class="fas fa-shield-alt"></i> Unlock exclusive rewards from our verified collection. Each offer is hand-picked and ready for you.
+    </div>
+
+    <footer>
+      <span><i class="far fa-clock"></i> 30 Verified Offers · 30 Exclusive Tiers · Instant Access</span>
+      <div class="reset-btn" id="resetAllBtn"><i class="fas fa-trash-alt"></i> Reset Counters</div>
+    </footer>
+  </div>
+
+  <div class="level-sidebar">
+    <h3><i class="fas fa-layer-group"></i> Select Your Offer</h3>
+    <div class="triggers-grid" id="desktopTriggers"></div>
+    <div class="pagination-controls" style="margin-top: 15px;">
+      <div class="page-nav-btn" id="desktopPrevBtn"><i class="fas fa-chevron-left"></i> Prev</div>
+      <div class="page-info" id="desktopPageInfo">Page 1/3</div>
+      <div class="page-nav-btn" id="desktopNextBtn">Next <i class="fas fa-chevron-right"></i></div>
     </div>
   </div>
-
-  <!-- ========= GROUP 1 : EXCLUSIVE DROPS ========= -->
-  <div class="section-title">
-    <i class="fas fa-fire"></i>
-    <h2>Exclusive Drops</h2>
-    <div class="badge">Fresh</div>
-  </div>
-  <div class="btn-grid" id="group1"></div>
-
-  <!-- ========= GROUP 2 : PREMIUM ACCESS ========= -->
-  <div class="section-title">
-    <i class="fas fa-crown"></i>
-    <h2>Premium Access</h2>
-    <div class="badge">Elite</div>
-  </div>
-  <div class="btn-grid" id="group2"></div>
-
-  <!-- ========= GROUP 3 : LIMITED DEALS ========= -->
-  <div class="section-title">
-    <i class="fas fa-bolt"></i>
-    <h2>Limited Deals</h2>
-    <div class="badge">Urgent</div>
-  </div>
-  <div class="btn-grid" id="group3"></div>
-
-  <footer>
-    <span><i class="far fa-clock"></i> 9 Live Offers · Regularly Updated</span>
-    <div class="reset-btn" id="resetAllBtn"><i class="fas fa-trash-alt"></i> Reset Counter</div>
-  </footer>
 </div>
 
 <script>
-  // ===================== 9 Offers with your new links =====================
-  const OFFERS = [
-    // Group 1: Exclusive Drops (3 offers)
-    { name: "⚡ Flash Strike", icon: "bolt", link: "https://breedsmuteexams.com/pxbkms6q8f?key=362829e96891fc0f4e20224f8617a9f6" },
-    { name: "🚀 Rocket Surge", icon: "rocket", link: "https://breedsmuteexams.com/rp2dmi6u53?key=86f4af450511ab7cead81ba8278bfd60" },
-    { name: "🎁 Secret Box", icon: "gift", link: "https://breedsmuteexams.com/q8hczjy3ua?key=9e50b3a32d94099d559d4e07ff9eaee9" },
-    
-    // Group 2: Premium Access (3 offers)
-    { name: "👑 Royal Elite", icon: "mug-hot", link: "https://breedsmuteexams.com/pg0g7hbz?key=0a51700c01624e101197d0cece7eec87" },
-    { name: "📱 Pro Max", icon: "mobile-alt", link: "https://breedsmuteexams.com/zsftke4a?key=459ade8ae4f24611bd363d2004d2a81a" },
-    { name: "🏎️ Speed Demon", icon: "car", link: "https://breedsmuteexams.com/qt6hxew21?key=e8a3bc01f6a586ebac0974a7c7742e57" },
-    
-    // Group 3: Limited Deals (3 offers)
-    { name: "💎 Crystal Gem", icon: "gem", link: "https://breedsmuteexams.com/ag9gajkg1?key=6326f54727c4b38a257477639b17180d" },
-    { name: "₿ Crypto Boost", icon: "bitcoin", link: "https://breedsmuteexams.com/j6tf9kyg39?key=e29f000f4fe6af39fe2d37efd54d27bb" },
-    { name: "🪙 Gold Reserve", icon: "coins", link: "https://breedsmuteexams.com/r4eah34p5?key=d1e0de2b1840d493542dd1b3866494e5" }
+  // ==================== 30 FACEBOOK IFRAME POSTS WITH EXACT HEIGHTS ====================
+  // Heights: 207px (most), 227px (one special)
+  const FRAMES_DATA = [
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02SNHoTApWVs1EaGaStEDoAjwDVhaHhdW17c6npm5BGP3ae2VrxajayQyJ6Bo4jf9il%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02QmgQqJodErAeuGxatDEscgELgkqgPQPwa4i2oRHXVJ2sSSZKNiWBZT4ab5nRLhHFl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02RzZJGqdMkVk2gJY4PynyG5tLRH8TxVeUCcsSveb4KXmFz1y6wEYNW1PGLwPEeUAel%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:227px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 227 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0w6BYDtSqH21NwE9kX9zpxkgq6AHi4t6QngoBGvZVoY94WvbiZkGELn5khHJVCEuLl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02MK4Wd1MdprhFWC3cdRPcVmh6XfLuoFBAuao7eS9pMroc15ypY1NjRtVE758Dfiszl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02CsFgk3NS5zPp8r8rGbtvYWgG62fLLHwpTR8dpHv3Dh8drWP9giZweWXCPX4rE3kAl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02YewdCeEtV4LGrzPfeQvPJnXWMpkvJ5YC98bHDa7GpXvtAMrgWGMq5TCezEQ8X6eAl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0suBRkZvccwwX9YmHTyv74LJW8GKNiRSAQA1kEcYM11kG3xfTcuBNYGmz46eCKKevl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0J57SHSMfXm9LQRuB9WXirK172W8ucYAdKiNJhD4SiDBXoQKhra67EC572ngyBUYil%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0veC17epUKtHx5VTf5ieiqipr25tPMAPZ37zzmzGvTQKBuJLNDwDomEWaPNaGkdUfl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02psZzjTQrNU5rHR9oLKzkiEpsXauecKFqH2skN3Jqqw7Ue6pJNk1ogf3zdAxZkBocl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02g1ByitcMkRC6kcwqLemkFErTuvdjNkdYymTUYmKPXwFsjN8hyQ56ZX1zUKqimvHDl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0tGavnHrSaYmojVndahT8W4Wo51bHWHzXdUk8voxcW3Q76yp1LiLYnQo9HfDCsVPEl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ZDVEiGnpyf3izbDaBkJDQBFXZyxeHoBmk1B7qgwPUzir1Lm7Rxcd4FZNV9koyeFXl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid029iKvYaBw4yUL3N3EYf1RnVpgAoay6xPqJwKDBoqrrk2rjHrt6WTfDqpCbUmqS2c1l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid033chnzM6dR6TeLicwDTL4K7khCjtRdE44Te1kLfp65ps36HpvVT7bprYfhw6Vbsz5l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02FgXGbo4QAJvvXsTCkAijUJtmQtkQQveh2YPEpFKqH64gxuoj1fti6XwZx44Fpatnl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0329xSVqnRAL6whngN4EH92WWh1ABsJPTdtpqLsnjvG7UBPGTDisC5pZeCxpHqpdrhl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0MvtBehosm77ZaBF3hExQTf9GCcbb9XqKxMimKCPDLCspRwxenNmz5kK4NwPdkJRml%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02bntQPXGWzEDmp4u3a9x6RyCrYUyaPo8Pn8Zd3G3ySyGkj2Tbxt34nyfaXZreHeNUl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02i7WGTsuwXJ7wDZXBbyFv4gPQSLrAbEJEZkttCjj6i8nQftqrNb8huQYjPqGfCJrdl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ASbFh1GiM1tFbK64fLcAoXR4nGnV19EsW2KHRoShnFc2rBb5gBvDMUaJXRkTHdZ2l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid096qMAhAEwaDQhvPCPRgKjkpqxZWhzsQYGyVLDnow7QhaC1yWqjCM7SyMPSgydYy9l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid029yBMAuCBVDckXw1KzHYmKFQPCB9Kr1VQYdUV5QWkqhS3DJhkJX6gVSPehRBET914l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0PdVxKiLN5VS8YqvkZMbxJNaG6EnpT43sKsTyRAd2Sw8AYwtN3E3pWnS7wH6gMDYcl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02q9d81FMiqooX5wgxB7MvyBNrfwXHuZcRrKrAkr2uLrZWx4u9QvyYkMXeLCUDkwx9l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02XcYpWZsX6Z9QzUvrykP7kEe7DmXQvmwWgeJFxidwe9dYSkxBWZiBCe8zuXUgt3jGl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02MrJ66yDBLYe9J78Ehj2ovBiQqKXzwwrpSnKX5XodXmERqomV18Epkyxez7zcyh6bl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02rEJwjaaMizZPk2zx4PoNdS2g965G5DxFbniX8SNSe2B6vGXcLJ95SgqCzVRyKkCPl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
+    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ymNMif2R4MKbuLZ5aHbuLummbrLGzbiT1agaaKgCX6xUrvCJFLrBhuM6FAnyhGKSl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 }
   ];
 
-  // Group splits: 3 + 3 + 3 = 9
-  const GROUP_OFFERS = {
-    group1: OFFERS.slice(0, 3),
-    group2: OFFERS.slice(3, 6),
-    group3: OFFERS.slice(6, 9)
-  };
+  const OFFER_TITLES = [
+    "🔥 Premium Access", "💎 Diamond Treasure", "👑 Royal Gold", "⚡ Lightning Reward", "🎁 Mystery Box",
+    "🚀 Rocket Bonus", "⭐ Platinum Star", "🏆 Champion", "💰 Cash Vault", "🎯 Precision",
+    "🌙 Midnight Magic", "☀️ Golden Sunrise", "🌀 Cyclone", "❄️ Frost Diamond", "🌈 Unicorn",
+    "🦅 Eagle Eye", "🐉 Dragon Fire", "🦁 Lion Heart", "🐺 Wolf Pack", "🦊 Silver Fox",
+    "🐼 Lucky Panda", "🐧 Emperor Gift", "🦄 Crystal", "🐳 Blue Whale", "🦇 Night Shadow",
+    "🍀 Lucky Clover", "🎲 Double Dice", "🏹 Archer", "⚔️ Knight Honor", "🛡️ Ancient Shield"
+  ];
 
-  let clickCounts = new Array(9).fill(0);
-  const STORAGE_KEY = "clickTracker9New";
+  const OFFER_ICONS = [
+    "fire", "gem", "crown", "bolt", "gift",
+    "rocket", "star", "trophy", "coins", "bullseye",
+    "moon", "sun", "wind", "snowflake", "rainbow",
+    "eagle", "dragon", "lion", "wolf", "fox",
+    "panda", "penguin", "horse", "whale", "bat",
+    "leaf", "dice-d6", "bow-arrow", "shield-halbed", "shield-alt"
+  ];
+
+  // Random shuffle for each user (persistent)
+  function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  function getRandomOrder() {
+    const RANDOM_ORDER_KEY = "premiumOfferRandomV4";
+    const savedOrder = localStorage.getItem(RANDOM_ORDER_KEY);
+    if (savedOrder) {
+      try {
+        const parsed = JSON.parse(savedOrder);
+        if (parsed.length === 30) return parsed;
+      } catch(e) {}
+    }
+    const order = Array.from({length: 30}, (_, i) => i);
+    shuffleArray(order);
+    localStorage.setItem(RANDOM_ORDER_KEY, JSON.stringify(order));
+    return order;
+  }
+
+  const randomOrder = getRandomOrder();
+  const shuffledFrames = randomOrder.map(i => FRAMES_DATA[i].html);
+  const shuffledTitles = randomOrder.map(i => OFFER_TITLES[i]);
+  const shuffledIcons = randomOrder.map(i => OFFER_ICONS[i]);
+
+  const TOTAL_OFFERS = 30;
+  let clickCounts = new Array(TOTAL_OFFERS).fill(0);
+  let claimedStatus = new Array(TOTAL_OFFERS).fill(false);
+  const STORAGE_KEY = "premiumOfferFrameRandomV4";
+  const CLAIMED_KEY = "premiumOfferFrameClaimedRandomV4";
 
   function loadCounts() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       try {
         let arr = JSON.parse(saved);
-        if (arr.length === 9) clickCounts = arr;
+        if (arr.length === TOTAL_OFFERS) clickCounts = arr;
+      } catch(e) {}
+    }
+    const savedClaimed = localStorage.getItem(CLAIMED_KEY);
+    if (savedClaimed) {
+      try {
+        let arr = JSON.parse(savedClaimed);
+        if (arr.length === TOTAL_OFFERS) claimedStatus = arr;
       } catch(e) {}
     }
   }
-
-  function saveCounts() {
+  function saveCounts() { 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(clickCounts));
+    localStorage.setItem(CLAIMED_KEY, JSON.stringify(claimedStatus));
   }
-
   function updateTotalDisplay() {
-    const total = clickCounts.reduce((a,b) => a+b, 0);
+    const total = clickCounts.reduce((a,b)=>a+b,0);
     document.getElementById("totalClicks").innerText = total;
   }
 
-  function renderButton(offer, idx) {
-    const count = clickCounts[idx];
-    const isClicked = count > 0;
-    const btn = document.createElement("a");
-    btn.href = offer.link;
-    btn.target = "_blank";
-    btn.rel = "noopener noreferrer";
-    btn.className = "offer-btn" + (isClicked ? " clicked" : "");
-    btn.setAttribute("data-idx", idx);
-    
-    btn.innerHTML = `
-      <div class="btn-left">
-        <i class="fas fa-${offer.icon}"></i>
-        <span>${offer.name}</span>
-      </div>
-      <div class="click-count">${count}</div>
-    `;
+  let currentTier = 1;
+  let currentPage = 0;
+  const ITEMS_PER_PAGE = 10;
+  const totalPages = Math.ceil(30 / ITEMS_PER_PAGE);
 
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      clickCounts[idx] += 1;
-      saveCounts();
-      updateTotalDisplay();
-      renderGroups();
-    });
-
-    return btn;
+  function renderDesktopTriggers() {
+    const container = document.getElementById("desktopTriggers");
+    container.innerHTML = "";
+    const start = currentPage * ITEMS_PER_PAGE;
+    const end = Math.min(start + ITEMS_PER_PAGE, 30);
+    for (let i = start; i < end; i++) {
+      const idx = i + 1;
+      const btn = document.createElement("div");
+      btn.className = "level-btn" + (currentTier === idx ? " active" : "");
+      btn.setAttribute("data-level", idx);
+      btn.innerHTML = `<i class="fas fa-tag"></i> ${idx}`;
+      btn.addEventListener("click", () => setActiveTier(idx));
+      container.appendChild(btn);
+    }
+    document.getElementById("desktopPageInfo").innerText = `Page ${currentPage+1}/${totalPages}`;
+    const prevBtn = document.getElementById("desktopPrevBtn");
+    const nextBtn = document.getElementById("desktopNextBtn");
+    if (currentPage === 0) prevBtn.classList.add("disabled");
+    else prevBtn.classList.remove("disabled");
+    if (currentPage === totalPages-1) nextBtn.classList.add("disabled");
+    else nextBtn.classList.remove("disabled");
   }
 
-  function renderGroups() {
-    const group1Container = document.getElementById("group1");
-    const group2Container = document.getElementById("group2");
-    const group3Container = document.getElementById("group3");
-    group1Container.innerHTML = "";
-    group2Container.innerHTML = "";
-    group3Container.innerHTML = "";
+  function renderMobileTriggers() {
+    const container = document.getElementById("mobileTriggers");
+    container.innerHTML = "";
+    const start = currentPage * ITEMS_PER_PAGE;
+    const end = Math.min(start + ITEMS_PER_PAGE, 30);
+    for (let i = start; i < end; i++) {
+      const idx = i + 1;
+      const btn = document.createElement("div");
+      btn.className = "mobile-tier-btn" + (currentTier === idx ? " active" : "");
+      btn.setAttribute("data-level", idx);
+      btn.innerHTML = `<i class="fas fa-tag"></i> ${idx}`;
+      btn.addEventListener("click", () => setActiveTier(idx));
+      container.appendChild(btn);
+    }
+    document.getElementById("mobilePageInfo").innerText = `Page ${currentPage+1}/${totalPages}`;
+    const prevBtn = document.getElementById("mobilePrevBtn");
+    const nextBtn = document.getElementById("mobileNextBtn");
+    if (currentPage === 0) prevBtn.classList.add("disabled");
+    else prevBtn.classList.remove("disabled");
+    if (currentPage === totalPages-1) nextBtn.classList.add("disabled");
+    else nextBtn.classList.remove("disabled");
+  }
 
-    let globalIdx = 0;
-    for (let i = 0; i < GROUP_OFFERS.group1.length; i++) {
-      group1Container.appendChild(renderButton(GROUP_OFFERS.group1[i], globalIdx++));
+  function renderCurrentTier() {
+    const grid = document.getElementById("offersGrid");
+    grid.innerHTML = "";
+    const idx = currentTier - 1;
+    const levelTitle = document.getElementById("levelName");
+    const levelBadge = document.getElementById("levelBadge");
+    levelTitle.innerText = `Offer ${currentTier} · ${shuffledTitles[idx]}`;
+    levelBadge.innerText = "1 Offer";
+
+    const count = clickCounts[idx];
+    const isClaimed = claimedStatus[idx];
+    
+    const card = document.createElement("div");
+    card.className = "offer-card";
+    
+    const iframeWrapper = document.createElement("div");
+    iframeWrapper.className = "iframe-wrapper";
+    iframeWrapper.innerHTML = shuffledFrames[idx];
+    
+    const btn = document.createElement("div");
+    btn.className = "claim-btn" + (count > 0 ? " clicked" : "") + (isClaimed ? " disabled" : "");
+    
+    btn.innerHTML = `
+      <div class="claim-btn-left">
+        <i class="fas fa-${shuffledIcons[idx]}"></i>
+        <span>View & Claim ${shuffledTitles[idx]}</span>
+      </div>
+      <div class="claim-count">${count}</div>
+    `;
+    
+    if (!isClaimed) {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (claimedStatus[idx]) return;
+        claimedStatus[idx] = true;
+        clickCounts[idx] += 1;
+        saveCounts();
+        updateTotalDisplay();
+        
+        const iframeElem = iframeWrapper.querySelector("iframe");
+        if (iframeElem) {
+          iframeElem.style.border = "2px solid #4ade80";
+          iframeElem.scrollIntoView({ behavior: "smooth", block: "center" });
+          setTimeout(() => {
+            iframeElem.style.border = "none";
+          }, 2000);
+        }
+        renderCurrentTier();
+        renderDesktopTriggers();
+        renderMobileTriggers();
+      });
     }
-    for (let i = 0; i < GROUP_OFFERS.group2.length; i++) {
-      group2Container.appendChild(renderButton(GROUP_OFFERS.group2[i], globalIdx++));
+    
+    card.appendChild(iframeWrapper);
+    card.appendChild(btn);
+    grid.appendChild(card);
+  }
+
+  function setActiveTier(tier) {
+    currentTier = tier;
+    renderDesktopTriggers();
+    renderMobileTriggers();
+    renderCurrentTier();
+  }
+
+  function goToPage(delta) {
+    const newPage = currentPage + delta;
+    if (newPage >= 0 && newPage < totalPages) {
+      currentPage = newPage;
+      renderDesktopTriggers();
+      renderMobileTriggers();
     }
-    for (let i = 0; i < GROUP_OFFERS.group3.length; i++) {
-      group3Container.appendChild(renderButton(GROUP_OFFERS.group3[i], globalIdx++));
-    }
-    updateTotalDisplay();
   }
 
   function resetCounters() {
-    for (let i = 0; i < clickCounts.length; i++) clickCounts[i] = 0;
+    for (let i=0; i<TOTAL_OFFERS; i++) {
+      clickCounts[i] = 0;
+      claimedStatus[i] = false;
+    }
     saveCounts();
-    renderGroups();
+    updateTotalDisplay();
+    renderCurrentTier();
+    renderDesktopTriggers();
+    renderMobileTriggers();
   }
 
+  document.getElementById("desktopPrevBtn").addEventListener("click", () => goToPage(-1));
+  document.getElementById("desktopNextBtn").addEventListener("click", () => goToPage(1));
+  document.getElementById("mobilePrevBtn").addEventListener("click", () => goToPage(-1));
+  document.getElementById("mobileNextBtn").addEventListener("click", () => goToPage(1));
   document.getElementById("resetAllBtn").addEventListener("click", resetCounters);
+
   loadCounts();
-  renderGroups();
+  renderDesktopTriggers();
+  renderMobileTriggers();
+  setActiveTier(1);
+  updateTotalDisplay();
 </script>
 </body>
 </html>
