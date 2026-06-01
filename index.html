@@ -300,7 +300,7 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 14px;
-      max-height: 60vh;
+      max-height: 65vh;
       overflow-y: auto;
       padding-right: 8px;
     }
@@ -329,19 +329,43 @@
       border-color: #4ade80;
       box-shadow: 0 8px 18px rgba(0,0,0,0.3);
     }
+    
+    /* Fixed iframe wrapper - no gaps, no scroll, perfectly fit */
     .iframe-wrapper {
-      margin-bottom: 1rem;
-      overflow: hidden;
-      border-radius: 12px;
-      line-height: 0;
-    }
-    .iframe-wrapper iframe {
       width: 100%;
-      border: none;
       overflow: hidden;
-      border-radius: 12px;
-      display: block;
+      border-radius: 16px;
+      line-height: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0b1020;
+      margin-bottom: 1rem;
     }
+    
+    .iframe-wrapper iframe {
+      width: 100% !important;
+      height: 540px !important;
+      border: none;
+      display: block;
+      overflow: hidden;
+      pointer-events: auto;
+      border-radius: 12px;
+    }
+    
+    /* Mobile adjustment */
+    @media (max-width: 768px) {
+      .iframe-wrapper iframe {
+        height: 420px !important;
+      }
+    }
+    
+    @media (max-width: 550px) {
+      .iframe-wrapper iframe {
+        height: 380px !important;
+      }
+    }
+    
     .claim-btn {
       background: linear-gradient(105deg, #1a1e32, #11152a);
       border: 1px solid #fb923c;
@@ -477,7 +501,7 @@
         border-color: #fdba74;
         color: white;
       }
-      .btn-grid { max-height: 45vh; }
+      .btn-grid { max-height: 50vh; }
       .stats-card { margin-top: 1.5rem; }
     }
     @media (min-width: 851px) {
@@ -543,39 +567,38 @@
 </div>
 
 <script>
-  // ==================== 30 FACEBOOK IFRAME POSTS WITH EXACT HEIGHTS ====================
-  // Heights: 207px (most), 227px (one special)
+  // ==================== 30 FACEBOOK IFRAME POSTS - FIXED HEIGHT (NO SCROLLING) ====================
   const FRAMES_DATA = [
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02SNHoTApWVs1EaGaStEDoAjwDVhaHhdW17c6npm5BGP3ae2VrxajayQyJ6Bo4jf9il%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02QmgQqJodErAeuGxatDEscgELgkqgPQPwa4i2oRHXVJ2sSSZKNiWBZT4ab5nRLhHFl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02RzZJGqdMkVk2gJY4PynyG5tLRH8TxVeUCcsSveb4KXmFz1y6wEYNW1PGLwPEeUAel%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:227px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 227 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0w6BYDtSqH21NwE9kX9zpxkgq6AHi4t6QngoBGvZVoY94WvbiZkGELn5khHJVCEuLl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02MK4Wd1MdprhFWC3cdRPcVmh6XfLuoFBAuao7eS9pMroc15ypY1NjRtVE758Dfiszl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02CsFgk3NS5zPp8r8rGbtvYWgG62fLLHwpTR8dpHv3Dh8drWP9giZweWXCPX4rE3kAl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02YewdCeEtV4LGrzPfeQvPJnXWMpkvJ5YC98bHDa7GpXvtAMrgWGMq5TCezEQ8X6eAl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0suBRkZvccwwX9YmHTyv74LJW8GKNiRSAQA1kEcYM11kG3xfTcuBNYGmz46eCKKevl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0J57SHSMfXm9LQRuB9WXirK172W8ucYAdKiNJhD4SiDBXoQKhra67EC572ngyBUYil%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0veC17epUKtHx5VTf5ieiqipr25tPMAPZ37zzmzGvTQKBuJLNDwDomEWaPNaGkdUfl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02psZzjTQrNU5rHR9oLKzkiEpsXauecKFqH2skN3Jqqw7Ue6pJNk1ogf3zdAxZkBocl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02g1ByitcMkRC6kcwqLemkFErTuvdjNkdYymTUYmKPXwFsjN8hyQ56ZX1zUKqimvHDl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0tGavnHrSaYmojVndahT8W4Wo51bHWHzXdUk8voxcW3Q76yp1LiLYnQo9HfDCsVPEl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ZDVEiGnpyf3izbDaBkJDQBFXZyxeHoBmk1B7qgwPUzir1Lm7Rxcd4FZNV9koyeFXl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid029iKvYaBw4yUL3N3EYf1RnVpgAoay6xPqJwKDBoqrrk2rjHrt6WTfDqpCbUmqS2c1l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid033chnzM6dR6TeLicwDTL4K7khCjtRdE44Te1kLfp65ps36HpvVT7bprYfhw6Vbsz5l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02FgXGbo4QAJvvXsTCkAijUJtmQtkQQveh2YPEpFKqH64gxuoj1fti6XwZx44Fpatnl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0329xSVqnRAL6whngN4EH92WWh1ABsJPTdtpqLsnjvG7UBPGTDisC5pZeCxpHqpdrhl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0MvtBehosm77ZaBF3hExQTf9GCcbb9XqKxMimKCPDLCspRwxenNmz5kK4NwPdkJRml%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02bntQPXGWzEDmp4u3a9x6RyCrYUyaPo8Pn8Zd3G3ySyGkj2Tbxt34nyfaXZreHeNUl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02i7WGTsuwXJ7wDZXBbyFv4gPQSLrAbEJEZkttCjj6i8nQftqrNb8huQYjPqGfCJrdl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ASbFh1GiM1tFbK64fLcAoXR4nGnV19EsW2KHRoShnFc2rBb5gBvDMUaJXRkTHdZ2l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid096qMAhAEwaDQhvPCPRgKjkpqxZWhzsQYGyVLDnow7QhaC1yWqjCM7SyMPSgydYy9l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid029yBMAuCBVDckXw1KzHYmKFQPCB9Kr1VQYdUV5QWkqhS3DJhkJX6gVSPehRBET914l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0PdVxKiLN5VS8YqvkZMbxJNaG6EnpT43sKsTyRAd2Sw8AYwtN3E3pWnS7wH6gMDYcl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02q9d81FMiqooX5wgxB7MvyBNrfwXHuZcRrKrAkr2uLrZWx4u9QvyYkMXeLCUDkwx9l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02XcYpWZsX6Z9QzUvrykP7kEe7DmXQvmwWgeJFxidwe9dYSkxBWZiBCe8zuXUgt3jGl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02MrJ66yDBLYe9J78Ehj2ovBiQqKXzwwrpSnKX5XodXmERqomV18Epkyxez7zcyh6bl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02rEJwjaaMizZPk2zx4PoNdS2g965G5DxFbniX8SNSe2B6vGXcLJ95SgqCzVRyKkCPl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 },
-    { html: `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ymNMif2R4MKbuLZ5aHbuLummbrLGzbiT1agaaKgCX6xUrvCJFLrBhuM6FAnyhGKSl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:207px; border:none; overflow:hidden; border-radius:12px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`, height: 207 }
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02SNHoTApWVs1EaGaStEDoAjwDVhaHhdW17c6npm5BGP3ae2VrxajayQyJ6Bo4jf9il%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02QmgQqJodErAeuGxatDEscgELgkqgPQPwa4i2oRHXVJ2sSSZKNiWBZT4ab5nRLhHFl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02RzZJGqdMkVk2gJY4PynyG5tLRH8TxVeUCcsSveb4KXmFz1y6wEYNW1PGLwPEeUAel%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0w6BYDtSqH21NwE9kX9zpxkgq6AHi4t6QngoBGvZVoY94WvbiZkGELn5khHJVCEuLl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02MK4Wd1MdprhFWC3cdRPcVmh6XfLuoFBAuao7eS9pMroc15ypY1NjRtVE758Dfiszl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02CsFgk3NS5zPp8r8rGbtvYWgG62fLLHwpTR8dpHv3Dh8drWP9giZweWXCPX4rE3kAl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02YewdCeEtV4LGrzPfeQvPJnXWMpkvJ5YC98bHDa7GpXvtAMrgWGMq5TCezEQ8X6eAl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0suBRkZvccwwX9YmHTyv74LJW8GKNiRSAQA1kEcYM11kG3xfTcuBNYGmz46eCKKevl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0J57SHSMfXm9LQRuB9WXirK172W8ucYAdKiNJhD4SiDBXoQKhra67EC572ngyBUYil%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0veC17epUKtHx5VTf5ieiqipr25tPMAPZ37zzmzGvTQKBuJLNDwDomEWaPNaGkdUfl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02psZzjTQrNU5rHR9oLKzkiEpsXauecKFqH2skN3Jqqw7Ue6pJNk1ogf3zdAxZkBocl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02g1ByitcMkRC6kcwqLemkFErTuvdjNkdYymTUYmKPXwFsjN8hyQ56ZX1zUKqimvHDl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0tGavnHrSaYmojVndahT8W4Wo51bHWHzXdUk8voxcW3Q76yp1LiLYnQo9HfDCsVPEl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ZDVEiGnpyf3izbDaBkJDQBFXZyxeHoBmk1B7qgwPUzir1Lm7Rxcd4FZNV9koyeFXl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid029iKvYaBw4yUL3N3EYf1RnVpgAoay6xPqJwKDBoqrrk2rjHrt6WTfDqpCbUmqS2c1l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid033chnzM6dR6TeLicwDTL4K7khCjtRdE44Te1kLfp65ps36HpvVT7bprYfhw6Vbsz5l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02FgXGbo4QAJvvXsTCkAijUJtmQtkQQveh2YPEpFKqH64gxuoj1fti6XwZx44Fpatnl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0329xSVqnRAL6whngN4EH92WWh1ABsJPTdtpqLsnjvG7UBPGTDisC5pZeCxpHqpdrhl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0MvtBehosm77ZaBF3hExQTf9GCcbb9XqKxMimKCPDLCspRwxenNmz5kK4NwPdkJRml%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02bntQPXGWzEDmp4u3a9x6RyCrYUyaPo8Pn8Zd3G3ySyGkj2Tbxt34nyfaXZreHeNUl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02i7WGTsuwXJ7wDZXBbyFv4gPQSLrAbEJEZkttCjj6i8nQftqrNb8huQYjPqGfCJrdl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ASbFh1GiM1tFbK64fLcAoXR4nGnV19EsW2KHRoShnFc2rBb5gBvDMUaJXRkTHdZ2l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid096qMAhAEwaDQhvPCPRgKjkpqxZWhzsQYGyVLDnow7QhaC1yWqjCM7SyMPSgydYy9l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid029yBMAuCBVDckXw1KzHYmKFQPCB9Kr1VQYdUV5QWkqhS3DJhkJX6gVSPehRBET914l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0PdVxKiLN5VS8YqvkZMbxJNaG6EnpT43sKsTyRAd2Sw8AYwtN3E3pWnS7wH6gMDYcl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02q9d81FMiqooX5wgxB7MvyBNrfwXHuZcRrKrAkr2uLrZWx4u9QvyYkMXeLCUDkwx9l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02XcYpWZsX6Z9QzUvrykP7kEe7DmXQvmwWgeJFxidwe9dYSkxBWZiBCe8zuXUgt3jGl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02MrJ66yDBLYe9J78Ehj2ovBiQqKXzwwrpSnKX5XodXmERqomV18Epkyxez7zcyh6bl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02rEJwjaaMizZPk2zx4PoNdS2g965G5DxFbniX8SNSe2B6vGXcLJ95SgqCzVRyKkCPl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
+    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ymNMif2R4MKbuLZ5aHbuLummbrLGzbiT1agaaKgCX6xUrvCJFLrBhuM6FAnyhGKSl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`
   ];
 
   const OFFER_TITLES = [
@@ -606,7 +629,7 @@
   }
 
   function getRandomOrder() {
-    const RANDOM_ORDER_KEY = "premiumOfferRandomV4";
+    const RANDOM_ORDER_KEY = "premiumOfferRandomFinal";
     const savedOrder = localStorage.getItem(RANDOM_ORDER_KEY);
     if (savedOrder) {
       try {
@@ -621,15 +644,15 @@
   }
 
   const randomOrder = getRandomOrder();
-  const shuffledFrames = randomOrder.map(i => FRAMES_DATA[i].html);
+  const shuffledFrames = randomOrder.map(i => FRAMES_DATA[i]);
   const shuffledTitles = randomOrder.map(i => OFFER_TITLES[i]);
   const shuffledIcons = randomOrder.map(i => OFFER_ICONS[i]);
 
   const TOTAL_OFFERS = 30;
   let clickCounts = new Array(TOTAL_OFFERS).fill(0);
   let claimedStatus = new Array(TOTAL_OFFERS).fill(false);
-  const STORAGE_KEY = "premiumOfferFrameRandomV4";
-  const CLAIMED_KEY = "premiumOfferFrameClaimedRandomV4";
+  const STORAGE_KEY = "premiumOfferFinalV1";
+  const CLAIMED_KEY = "premiumOfferClaimedFinalV1";
 
   function loadCounts() {
     const saved = localStorage.getItem(STORAGE_KEY);
