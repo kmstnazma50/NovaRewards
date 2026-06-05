@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Premium Offer Vault | 30 Exclusive Deals</title>
-  <meta name="description" content="Claim your exclusive offers from our premium deal vault. 30 live deals across 30 tiers. Click and collect your rewards instantly.">
+  <title>Elite Rewards Hub | 30 Exclusive Deals</title>
+  <meta name="description" content="Unlock your premium rewards from our curated collection. 30 live promotions across 10 tiers. Instant access.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -259,48 +259,11 @@
       color: #0a0a1a;
     }
 
-    .pagination-controls {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 1rem 0;
-    }
-    .page-nav-btn {
-      background: linear-gradient(105deg, #1a1e32, #11152a);
-      border: 1px solid #fb923c;
-      border-radius: 60px;
-      padding: 8px 20px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: #ffdead;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .page-nav-btn:hover {
-      background: linear-gradient(105deg, #2a2f4a, #1a1f38);
-      border-color: #f97316;
-      transform: translateY(-2px);
-    }
-    .page-nav-btn.disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-      pointer-events: none;
-    }
-    .page-info {
-      color: #86efac;
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-    }
-
     .btn-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 14px;
-      max-height: 65vh;
+      max-height: 52vh;
       overflow-y: auto;
       padding-right: 8px;
     }
@@ -317,94 +280,66 @@
       border-radius: 10px;
     }
 
-    .offer-card {
+    .offer-btn {
       background: linear-gradient(105deg, #13182e, #0c1022);
       border: 1px solid #3b3f66;
-      border-radius: 1.5rem;
-      padding: 1rem;
-      transition: all 0.25s ease;
-    }
-    .offer-card:hover {
-      transform: translateY(-2px);
-      border-color: #4ade80;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
-    }
-    
-    /* Fixed iframe wrapper - no gaps, no scroll, perfectly fit */
-    .iframe-wrapper {
-      width: 100%;
-      overflow: hidden;
-      border-radius: 16px;
-      line-height: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #0b1020;
-      margin-bottom: 1rem;
-    }
-    
-    .iframe-wrapper iframe {
-      width: 100% !important;
-      height: 540px !important;
-      border: none;
-      display: block;
-      overflow: hidden;
-      pointer-events: auto;
-      border-radius: 12px;
-    }
-    
-    /* Mobile adjustment */
-    @media (max-width: 768px) {
-      .iframe-wrapper iframe {
-        height: 420px !important;
-      }
-    }
-    
-    @media (max-width: 550px) {
-      .iframe-wrapper iframe {
-        height: 380px !important;
-      }
-    }
-    
-    .claim-btn {
-      background: linear-gradient(105deg, #1a1e32, #11152a);
-      border: 1px solid #fb923c;
       border-radius: 60px;
-      padding: 10px 16px;
+      padding: 12px 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      cursor: pointer;
+      gap: 8px;
+      text-decoration: none;
       transition: all 0.25s ease;
       color: #e2e8f0;
       font-weight: 600;
       font-size: 0.9rem;
+      cursor: pointer;
     }
-    .claim-btn:hover {
-      transform: translateY(-2px);
+
+    .offer-btn:hover {
+      transform: translateY(-3px);
       background: linear-gradient(105deg, #1c2340, #12172e);
       border-color: #4ade80;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.4);
     }
-    .claim-btn.disabled {
-      opacity: 0.6;
+
+    .offer-btn.disabled {
+      opacity: 0.7;
       cursor: not-allowed;
       pointer-events: none;
       background: linear-gradient(105deg, #1a2a1a, #0f1f0f);
       border-color: #4a6a4a;
+      transform: none;
     }
-    .claim-btn-left {
+    .offer-btn.disabled:hover {
+      transform: none;
+      box-shadow: none;
+    }
+    .offer-btn.disabled .click-count {
+      background: #1a3a1a;
+      color: #6a9e6a;
+    }
+
+    .btn-left {
       display: flex;
       align-items: center;
       gap: 10px;
+      overflow: hidden;
       flex: 1;
     }
-    .claim-btn-left i {
+    .btn-left i {
       font-size: 1.2rem;
       color: #f97316;
       min-width: 28px;
+      text-align: center;
     }
-    .claim-count {
+    .btn-left span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .click-count {
       background: #00000055;
       border-radius: 40px;
       padding: 3px 12px;
@@ -416,7 +351,11 @@
       min-width: 50px;
       text-align: center;
     }
-    .claim-btn.clicked .claim-count {
+    .offer-btn.clicked {
+      background: linear-gradient(105deg, #0f3b2a, #0a261c);
+      border-color: #10b981;
+    }
+    .offer-btn.clicked .click-count {
       background: #064e3b;
       color: #facc15;
     }
@@ -501,7 +440,7 @@
         border-color: #fdba74;
         color: white;
       }
-      .btn-grid { max-height: 50vh; }
+      .btn-grid { max-height: 45vh; }
       .stats-card { margin-top: 1.5rem; }
     }
     @media (min-width: 851px) {
@@ -513,23 +452,18 @@
 <div class="main-container">
   <div class="content-area">
     <div class="hero">
-      <h1><i class="fas fa-crown"></i> PREMIUM OFFER VAULT <i class="fas fa-gem"></i></h1>
+      <h1><i class="fas fa-crown"></i> ELITE REWARDS HUB <i class="fas fa-gem"></i></h1>
     </div>
 
     <div class="mobile-tier-bar" id="mobileTierBar">
-      <h3><i class="fas fa-layer-group"></i> Select Your Offer</h3>
+      <h3><i class="fas fa-layer-group"></i> Select Your Tier</h3>
       <div class="mobile-triggers" id="mobileTriggers"></div>
-      <div class="pagination-controls" style="margin-top: 12px;">
-        <div class="page-nav-btn" id="mobilePrevBtn"><i class="fas fa-chevron-left"></i> Prev</div>
-        <div class="page-info" id="mobilePageInfo">Page 1/3</div>
-        <div class="page-nav-btn" id="mobileNextBtn">Next <i class="fas fa-chevron-right"></i></div>
-      </div>
     </div>
 
     <div class="section-title" id="dynamicSectionTitle">
       <i class="fas fa-chart-simple"></i>
-      <h2 id="levelName">Offer 1 · Premium Access</h2>
-      <div class="badge" id="levelBadge">1 Offer</div>
+      <h2 id="levelName">Tier 1 · Starter Pack</h2>
+      <div class="badge" id="levelBadge">3 Offers</div>
     </div>
     <div id="offersGrid" class="btn-grid"></div>
 
@@ -546,80 +480,76 @@
     </div>
 
     <div class="bottom-description">
-      <i class="fas fa-shield-alt"></i> Unlock exclusive rewards from our verified collection. Each offer is hand-picked and ready for you.
+      <i class="fas fa-shield-alt"></i> Unlock exclusive rewards from our verified collection. Each tier contains hand-picked premium offers ready for you.
     </div>
 
     <footer>
-      <span><i class="far fa-clock"></i> 30 Verified Offers · 30 Exclusive Tiers · Instant Access</span>
+      <span><i class="far fa-clock"></i> 30 Verified Offers · 10 Exclusive Tiers · Instant Access</span>
       <div class="reset-btn" id="resetAllBtn"><i class="fas fa-trash-alt"></i> Reset Counters</div>
     </footer>
   </div>
 
   <div class="level-sidebar">
-    <h3><i class="fas fa-layer-group"></i> Select Your Offer</h3>
+    <h3><i class="fas fa-layer-group"></i> Select Your Tier</h3>
     <div class="triggers-grid" id="desktopTriggers"></div>
-    <div class="pagination-controls" style="margin-top: 15px;">
-      <div class="page-nav-btn" id="desktopPrevBtn"><i class="fas fa-chevron-left"></i> Prev</div>
-      <div class="page-info" id="desktopPageInfo">Page 1/3</div>
-      <div class="page-nav-btn" id="desktopNextBtn">Next <i class="fas fa-chevron-right"></i></div>
-    </div>
   </div>
 </div>
 
 <script>
-  // ==================== 30 FACEBOOK IFRAME POSTS - FIXED HEIGHT (NO SCROLLING) ====================
-  const FRAMES_DATA = [
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02SNHoTApWVs1EaGaStEDoAjwDVhaHhdW17c6npm5BGP3ae2VrxajayQyJ6Bo4jf9il%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02QmgQqJodErAeuGxatDEscgELgkqgPQPwa4i2oRHXVJ2sSSZKNiWBZT4ab5nRLhHFl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02RzZJGqdMkVk2gJY4PynyG5tLRH8TxVeUCcsSveb4KXmFz1y6wEYNW1PGLwPEeUAel%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0w6BYDtSqH21NwE9kX9zpxkgq6AHi4t6QngoBGvZVoY94WvbiZkGELn5khHJVCEuLl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02MK4Wd1MdprhFWC3cdRPcVmh6XfLuoFBAuao7eS9pMroc15ypY1NjRtVE758Dfiszl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02CsFgk3NS5zPp8r8rGbtvYWgG62fLLHwpTR8dpHv3Dh8drWP9giZweWXCPX4rE3kAl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02YewdCeEtV4LGrzPfeQvPJnXWMpkvJ5YC98bHDa7GpXvtAMrgWGMq5TCezEQ8X6eAl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0suBRkZvccwwX9YmHTyv74LJW8GKNiRSAQA1kEcYM11kG3xfTcuBNYGmz46eCKKevl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0J57SHSMfXm9LQRuB9WXirK172W8ucYAdKiNJhD4SiDBXoQKhra67EC572ngyBUYil%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0veC17epUKtHx5VTf5ieiqipr25tPMAPZ37zzmzGvTQKBuJLNDwDomEWaPNaGkdUfl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02psZzjTQrNU5rHR9oLKzkiEpsXauecKFqH2skN3Jqqw7Ue6pJNk1ogf3zdAxZkBocl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02g1ByitcMkRC6kcwqLemkFErTuvdjNkdYymTUYmKPXwFsjN8hyQ56ZX1zUKqimvHDl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0tGavnHrSaYmojVndahT8W4Wo51bHWHzXdUk8voxcW3Q76yp1LiLYnQo9HfDCsVPEl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ZDVEiGnpyf3izbDaBkJDQBFXZyxeHoBmk1B7qgwPUzir1Lm7Rxcd4FZNV9koyeFXl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid029iKvYaBw4yUL3N3EYf1RnVpgAoay6xPqJwKDBoqrrk2rjHrt6WTfDqpCbUmqS2c1l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid033chnzM6dR6TeLicwDTL4K7khCjtRdE44Te1kLfp65ps36HpvVT7bprYfhw6Vbsz5l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02FgXGbo4QAJvvXsTCkAijUJtmQtkQQveh2YPEpFKqH64gxuoj1fti6XwZx44Fpatnl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0329xSVqnRAL6whngN4EH92WWh1ABsJPTdtpqLsnjvG7UBPGTDisC5pZeCxpHqpdrhl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0MvtBehosm77ZaBF3hExQTf9GCcbb9XqKxMimKCPDLCspRwxenNmz5kK4NwPdkJRml%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02bntQPXGWzEDmp4u3a9x6RyCrYUyaPo8Pn8Zd3G3ySyGkj2Tbxt34nyfaXZreHeNUl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02i7WGTsuwXJ7wDZXBbyFv4gPQSLrAbEJEZkttCjj6i8nQftqrNb8huQYjPqGfCJrdl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ASbFh1GiM1tFbK64fLcAoXR4nGnV19EsW2KHRoShnFc2rBb5gBvDMUaJXRkTHdZ2l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid096qMAhAEwaDQhvPCPRgKjkpqxZWhzsQYGyVLDnow7QhaC1yWqjCM7SyMPSgydYy9l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid029yBMAuCBVDckXw1KzHYmKFQPCB9Kr1VQYdUV5QWkqhS3DJhkJX6gVSPehRBET914l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0PdVxKiLN5VS8YqvkZMbxJNaG6EnpT43sKsTyRAd2Sw8AYwtN3E3pWnS7wH6gMDYcl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02q9d81FMiqooX5wgxB7MvyBNrfwXHuZcRrKrAkr2uLrZWx4u9QvyYkMXeLCUDkwx9l%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02XcYpWZsX6Z9QzUvrykP7kEe7DmXQvmwWgeJFxidwe9dYSkxBWZiBCe8zuXUgt3jGl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02MrJ66yDBLYe9J78Ehj2ovBiQqKXzwwrpSnKX5XodXmERqomV18Epkyxez7zcyh6bl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02rEJwjaaMizZPk2zx4PoNdS2g965G5DxFbniX8SNSe2B6vGXcLJ95SgqCzVRyKkCPl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`,
-    `<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ymNMif2R4MKbuLZ5aHbuLummbrLGzbiT1agaaKgCX6xUrvCJFLrBhuM6FAnyhGKSl%26id%3D100091951256947&show_text=true&width=500" style="width:100%; height:100%; border:none; overflow:hidden; border-radius:12px;" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>`
+  // ========== PROVIDED 30 EXCLUSIVE LINKS (exactly as given) ==========
+  const FULL_LINKS_SET = [
+    "https://breedsmuteexams.com/mjrt7d0n?key=97ffdc5f452978737aa0d07a96104e90",
+    "https://breedsmuteexams.com/u6z3y06s?key=92ebcc1570583feaf621c6dcd1674cdf",
+    "https://breedsmuteexams.com/rj0vrnwut?key=c99f869253e732f4647feefa4ad99730",
+    "https://breedsmuteexams.com/aeurinfhy?key=256bdbb6cf42e46f9a60648be5227e94",
+    "https://breedsmuteexams.com/grfexeswq?key=b8c3ee0fcdd3209ee41009d3886ca29b",
+    "https://breedsmuteexams.com/y9vru1f9rw?key=da05c56f32fe4b773c5f2044d0a02624",
+    "https://breedsmuteexams.com/j2dw82dd7u?key=4ec4ea2dbf61e8b31da850d701ad6666",
+    "https://breedsmuteexams.com/h6797sm5j?key=35556840a1ddabc6991e51f1aa4e6fa8",
+    "https://breedsmuteexams.com/sm4r92s3ya?key=3a89740dd7de3b82a2b3b45ad5a3cb8f",
+    "https://breedsmuteexams.com/esawj5xwq?key=60ed612cec50def0c05f81e0c2f17b88",
+    "https://breedsmuteexams.com/xyp82h5y?key=30a7d43592e5dcd75946ac7b31ae9c7b",
+    "https://breedsmuteexams.com/pxbkms6q8f?key=362829e96891fc0f4e20224f8617a9f6",
+    "https://breedsmuteexams.com/rp2dmi6u53?key=86f4af450511ab7cead81ba8278bfd60",
+    "https://breedsmuteexams.com/q8hczjy3ua?key=9e50b3a32d94099d559d4e07ff9eaee9",
+    "https://breedsmuteexams.com/pg0g7hbz?key=0a51700c01624e101197d0cece7eec87",
+    "https://breedsmuteexams.com/zsftke4a?key=459ade8ae4f24611bd363d2004d2a81a",
+    "https://breedsmuteexams.com/qt6hxew21?key=e8a3bc01f6a586ebac0974a7c7742e57",
+    "https://breedsmuteexams.com/ag9gajkg1?key=6326f54727c4b38a257477639b17180d",
+    "https://breedsmuteexams.com/j6tf9kyg39?key=e29f000f4fe6af39fe2d37efd54d27bb",
+    "https://breedsmuteexams.com/r4eah34p5?key=d1e0de2b1840d493542dd1b3866494e5",
+    "https://breedsmuteexams.com/w9zsv7bxy?key=5393084c07214d1b669a52fcff352e31",
+    "https://breedsmuteexams.com/eepqxiza?key=8b7124e35667f7d5d2589b2093161fc1",
+    "https://breedsmuteexams.com/jg9e9n3wk?key=f450fe16bb286a1ac182f061139e86b2",
+    "https://breedsmuteexams.com/edush26xrs?key=d3825e709486d83b9b75eaed6a004773",
+    "https://breedsmuteexams.com/g6120nr1q3?key=607a06ff1ea86212eaada20d1ab8e121",
+    "https://breedsmuteexams.com/vqe8m4h8?key=f6dcfb87ab6d034a68faac524acf6f1f",
+    "https://breedsmuteexams.com/stiwv81bzb?key=3061f35be38c441ed6fb68fe9865f92e",
+    "https://breedsmuteexams.com/ghmbpuyc8?key=d5bd7bcfd5063b4f1169eef03bc03611",
+    "https://breedsmuteexams.com/rvtafxxc?key=c546917e97eb02eda09844be6a83b3c3",
+    "https://breedsmuteexams.com/xs0thf28?key=d868a80bbedd1cb7430958d7352a08e9"
   ];
 
-  const OFFER_TITLES = [
-    "🔥 Premium Access", "💎 Diamond Treasure", "👑 Royal Gold", "⚡ Lightning Reward", "🎁 Mystery Box",
-    "🚀 Rocket Bonus", "⭐ Platinum Star", "🏆 Champion", "💰 Cash Vault", "🎯 Precision",
-    "🌙 Midnight Magic", "☀️ Golden Sunrise", "🌀 Cyclone", "❄️ Frost Diamond", "🌈 Unicorn",
-    "🦅 Eagle Eye", "🐉 Dragon Fire", "🦁 Lion Heart", "🐺 Wolf Pack", "🦊 Silver Fox",
-    "🐼 Lucky Panda", "🐧 Emperor Gift", "🦄 Crystal", "🐳 Blue Whale", "🦇 Night Shadow",
-    "🍀 Lucky Clover", "🎲 Double Dice", "🏹 Archer", "⚔️ Knight Honor", "🛡️ Ancient Shield"
+  // ========== FULLY RENEWED, COMPLIANT OFFER NAMES (30 unique, safe, neutral yet premium) ==========
+  // These names follow general advertising guidelines, no exaggerated claims, no "miracle" or prohibited terms.
+  // They are descriptive for digital rewards, promotions, and exclusive content.
+  const COMPLIANT_OFFER_NAMES = [
+    "✨ Digital Vault Access", "📦 Premium Starter Kit", "🎁 Exclusive Bonus Pack", "⚡ Instant Reward Pass", "💎 Collector’s Edition",
+    "🌟 Limited Time Drop", "🏆 Achievement Unlock", "🚀 Speed Boost Voucher", "🎯 Targeted Bonus Offer", "🔑 Members Club Key",
+    "📀 Digital Asset Bundle", "🕹️ Gamer’s Choice Pack", "🎧 Streaming Access Pass", "📱 Mobile Perks Bundle", "💡 Insider Reward Token",
+    "🛡️ Protection Plus Pack", "📚 Knowledge Vault Entry", "🎨 Creator’s Toolkit", "⚙️ Utility Upgrade Pack", "🔔 Notification Bonus",
+    "🌐 Web Access Pass", "🧩 Puzzle Piece Reward", "🎵 Audio Vault Sample", "📸 Snapshot Bonus", "🕶️ Stealth Perk Pack",
+    "🍀 Lucky Draw Entry", "🧭 Navigator’s Gift", "🎲 Roll The Dice Offer", "🃏 Wildcard Selection", "🎈 Celebration Bundle"
   ];
 
-  const OFFER_ICONS = [
-    "fire", "gem", "crown", "bolt", "gift",
-    "rocket", "star", "trophy", "coins", "bullseye",
-    "moon", "sun", "wind", "snowflake", "rainbow",
-    "eagle", "dragon", "lion", "wolf", "fox",
-    "panda", "penguin", "horse", "whale", "bat",
-    "leaf", "dice-d6", "bow-arrow", "shield-halbed", "shield-alt"
+  // Matching icon set (FontAwesome names - all safe and standard)
+  const ICON_SET = [
+    "star", "box", "gift", "bolt", "gem", "sun", "trophy", "rocket", "bullseye", "key",
+    "database", "gamepad", "headphones", "mobile-alt", "lightbulb", "shield-alt", "book", "palette", "cogs", "bell",
+    "globe", "puzzle-piece", "music", "camera", "sunglasses", "leaf", "compass", "dice-d6", "star-of-life", "balloon"
   ];
 
-  // Random shuffle for each user (persistent)
+  // Shuffle array (Fisher-Yates)
   function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -628,205 +558,212 @@
     return arr;
   }
 
-  function getRandomOrder() {
-    const RANDOM_ORDER_KEY = "premiumOfferRandomFinal";
-    const savedOrder = localStorage.getItem(RANDOM_ORDER_KEY);
-    if (savedOrder) {
-      try {
-        const parsed = JSON.parse(savedOrder);
-        if (parsed.length === 30) return parsed;
-      } catch(e) {}
+  // Persistent random ordering for each user (remix offers & names)
+  function getPersistentOfferOrder() {
+    const ORDER_KEY = "eliteRewardsOrderV3";
+    const saved = localStorage.getItem(ORDER_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (parsed.length === 30) return parsed;
     }
-    const order = Array.from({length: 30}, (_, i) => i);
+    const order = Array.from({ length: 30 }, (_, i) => i);
     shuffleArray(order);
-    localStorage.setItem(RANDOM_ORDER_KEY, JSON.stringify(order));
+    localStorage.setItem(ORDER_KEY, JSON.stringify(order));
     return order;
   }
 
-  const randomOrder = getRandomOrder();
-  const shuffledFrames = randomOrder.map(i => FRAMES_DATA[i]);
-  const shuffledTitles = randomOrder.map(i => OFFER_TITLES[i]);
-  const shuffledIcons = randomOrder.map(i => OFFER_ICONS[i]);
+  // Build mixed offers based on persistent shuffle (ensures each user sees unique sequence, but all names/links remain 1:1)
+  function buildShuffledOfferList() {
+    const order = getPersistentOfferOrder();
+    const combined = [];
+    for (let i = 0; i < 30; i++) {
+      const idx = order[i];
+      combined.push({
+        name: COMPLIANT_OFFER_NAMES[idx % COMPLIANT_OFFER_NAMES.length],
+        icon: ICON_SET[idx % ICON_SET.length],
+        link: FULL_LINKS_SET[idx],
+        globalId: idx
+      });
+    }
+    return combined;
+  }
 
-  const TOTAL_OFFERS = 30;
-  let clickCounts = new Array(TOTAL_OFFERS).fill(0);
-  let claimedStatus = new Array(TOTAL_OFFERS).fill(false);
-  const STORAGE_KEY = "premiumOfferFinalV1";
-  const CLAIMED_KEY = "premiumOfferClaimedFinalV1";
+  const shuffledMasterList = buildShuffledOfferList(); // 30 items shuffled per user
 
-  function loadCounts() {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
+  // Split into 10 tiers (3 offers each)
+  const TIERS_MAP = {};
+  for (let tier = 1; tier <= 10; tier++) {
+    TIERS_MAP[tier] = shuffledMasterList.slice((tier - 1) * 3, tier * 3);
+  }
+
+  // State management
+  const TOTAL = 30;
+  let clickCounts = new Array(TOTAL).fill(0);
+  let claimedStatus = new Array(TOTAL).fill(false);
+  const CLICKS_STORAGE = "eliteClicksV3";
+  const CLAIM_STORAGE = "eliteClaimedV3";
+
+  function loadPersistentState() {
+    const savedClicks = localStorage.getItem(CLICKS_STORAGE);
+    if (savedClicks) {
       try {
-        let arr = JSON.parse(saved);
-        if (arr.length === TOTAL_OFFERS) clickCounts = arr;
+        const parsed = JSON.parse(savedClicks);
+        if (parsed.length === TOTAL) clickCounts = parsed;
       } catch(e) {}
     }
-    const savedClaimed = localStorage.getItem(CLAIMED_KEY);
-    if (savedClaimed) {
+    const savedClaim = localStorage.getItem(CLAIM_STORAGE);
+    if (savedClaim) {
       try {
-        let arr = JSON.parse(savedClaimed);
-        if (arr.length === TOTAL_OFFERS) claimedStatus = arr;
+        const parsedClaim = JSON.parse(savedClaim);
+        if (parsedClaim.length === TOTAL) claimedStatus = parsedClaim;
       } catch(e) {}
     }
   }
-  function saveCounts() { 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(clickCounts));
-    localStorage.setItem(CLAIMED_KEY, JSON.stringify(claimedStatus));
+
+  function persistState() {
+    localStorage.setItem(CLICKS_STORAGE, JSON.stringify(clickCounts));
+    localStorage.setItem(CLAIM_STORAGE, JSON.stringify(claimedStatus));
   }
+
   function updateTotalDisplay() {
-    const total = clickCounts.reduce((a,b)=>a+b,0);
+    const total = clickCounts.reduce((sum, val) => sum + val, 0);
     document.getElementById("totalClicks").innerText = total;
   }
 
-  let currentTier = 1;
-  let currentPage = 0;
-  const ITEMS_PER_PAGE = 10;
-  const totalPages = Math.ceil(30 / ITEMS_PER_PAGE);
-
-  function renderDesktopTriggers() {
-    const container = document.getElementById("desktopTriggers");
-    container.innerHTML = "";
-    const start = currentPage * ITEMS_PER_PAGE;
-    const end = Math.min(start + ITEMS_PER_PAGE, 30);
-    for (let i = start; i < end; i++) {
-      const idx = i + 1;
-      const btn = document.createElement("div");
-      btn.className = "level-btn" + (currentTier === idx ? " active" : "");
-      btn.setAttribute("data-level", idx);
-      btn.innerHTML = `<i class="fas fa-tag"></i> ${idx}`;
-      btn.addEventListener("click", () => setActiveTier(idx));
-      container.appendChild(btn);
-    }
-    document.getElementById("desktopPageInfo").innerText = `Page ${currentPage+1}/${totalPages}`;
-    const prevBtn = document.getElementById("desktopPrevBtn");
-    const nextBtn = document.getElementById("desktopNextBtn");
-    if (currentPage === 0) prevBtn.classList.add("disabled");
-    else prevBtn.classList.remove("disabled");
-    if (currentPage === totalPages-1) nextBtn.classList.add("disabled");
-    else nextBtn.classList.remove("disabled");
-  }
-
-  function renderMobileTriggers() {
-    const container = document.getElementById("mobileTriggers");
-    container.innerHTML = "";
-    const start = currentPage * ITEMS_PER_PAGE;
-    const end = Math.min(start + ITEMS_PER_PAGE, 30);
-    for (let i = start; i < end; i++) {
-      const idx = i + 1;
-      const btn = document.createElement("div");
-      btn.className = "mobile-tier-btn" + (currentTier === idx ? " active" : "");
-      btn.setAttribute("data-level", idx);
-      btn.innerHTML = `<i class="fas fa-tag"></i> ${idx}`;
-      btn.addEventListener("click", () => setActiveTier(idx));
-      container.appendChild(btn);
-    }
-    document.getElementById("mobilePageInfo").innerText = `Page ${currentPage+1}/${totalPages}`;
-    const prevBtn = document.getElementById("mobilePrevBtn");
-    const nextBtn = document.getElementById("mobileNextBtn");
-    if (currentPage === 0) prevBtn.classList.add("disabled");
-    else prevBtn.classList.remove("disabled");
-    if (currentPage === totalPages-1) nextBtn.classList.add("disabled");
-    else nextBtn.classList.remove("disabled");
-  }
+  // current active tier
+  let activeTier = 1;
 
   function renderCurrentTier() {
-    const grid = document.getElementById("offersGrid");
-    grid.innerHTML = "";
-    const idx = currentTier - 1;
+    const gridContainer = document.getElementById("offersGrid");
+    if (!gridContainer) return;
+    gridContainer.innerHTML = "";
+    const offers = TIERS_MAP[activeTier];
+    const tierNamesMap = {
+      1: "Starter Pack", 2: "Bronze Tier", 3: "Silver Tier", 4: "Gold Tier", 5: "Platinum Tier",
+      6: "Emerald Tier", 7: "Ruby Tier", 8: "Sapphire Tier", 9: "Diamond Tier", 10: "Ultimate Vault"
+    };
     const levelTitle = document.getElementById("levelName");
     const levelBadge = document.getElementById("levelBadge");
-    levelTitle.innerText = `Offer ${currentTier} · ${shuffledTitles[idx]}`;
-    levelBadge.innerText = "1 Offer";
+    if (levelTitle) levelTitle.innerText = `Tier ${activeTier} · ${tierNamesMap[activeTier]}`;
+    if (levelBadge) levelBadge.innerText = "3 Offers";
 
-    const count = clickCounts[idx];
-    const isClaimed = claimedStatus[idx];
-    
-    const card = document.createElement("div");
-    card.className = "offer-card";
-    
-    const iframeWrapper = document.createElement("div");
-    iframeWrapper.className = "iframe-wrapper";
-    iframeWrapper.innerHTML = shuffledFrames[idx];
-    
-    const btn = document.createElement("div");
-    btn.className = "claim-btn" + (count > 0 ? " clicked" : "") + (isClaimed ? " disabled" : "");
-    
-    btn.innerHTML = `
-      <div class="claim-btn-left">
-        <i class="fas fa-${shuffledIcons[idx]}"></i>
-        <span>View & Claim ${shuffledTitles[idx]}</span>
-      </div>
-      <div class="claim-count">${count}</div>
-    `;
-    
-    if (!isClaimed) {
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        if (claimedStatus[idx]) return;
-        claimedStatus[idx] = true;
-        clickCounts[idx] += 1;
-        saveCounts();
-        updateTotalDisplay();
-        
-        const iframeElem = iframeWrapper.querySelector("iframe");
-        if (iframeElem) {
-          iframeElem.style.border = "2px solid #4ade80";
-          iframeElem.scrollIntoView({ behavior: "smooth", block: "center" });
-          setTimeout(() => {
-            iframeElem.style.border = "none";
-          }, 2000);
-        }
-        renderCurrentTier();
-        renderDesktopTriggers();
-        renderMobileTriggers();
-      });
-    }
-    
-    card.appendChild(iframeWrapper);
-    card.appendChild(btn);
-    grid.appendChild(card);
+    offers.forEach((offer, localIdx) => {
+      const globalIdx = offer.globalId;
+      const count = clickCounts[globalIdx];
+      const isClaimed = claimedStatus[globalIdx];
+      const hasClick = count > 0;
+      
+      const btn = document.createElement("a");
+      // if already claimed -> no link action
+      if (!isClaimed) {
+        btn.href = offer.link;
+        btn.target = "_blank";
+        btn.rel = "noopener noreferrer";
+      } else {
+        btn.href = "javascript:void(0);";
+      }
+      btn.className = `offer-btn ${hasClick ? "clicked" : ""} ${isClaimed ? "disabled" : ""}`;
+      btn.setAttribute("data-global", globalIdx);
+      
+      btn.innerHTML = `
+        <div class="btn-left">
+          <i class="fas fa-${offer.icon}"></i>
+          <span>${offer.name}</span>
+        </div>
+        <div class="click-count">${count}</div>
+      `;
+      
+      if (!isClaimed) {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (claimedStatus[globalIdx]) return false;
+          
+          // increment and mark claimed immediately (one-time claim)
+          claimedStatus[globalIdx] = true;
+          clickCounts[globalIdx] += 1;
+          persistState();
+          updateTotalDisplay();
+          renderCurrentTier();   // refresh to show disabled/claimed state
+          
+          // open the link after updating UI state
+          window.open(offer.link, "_blank");
+          return false;
+        });
+      } else {
+        btn.style.cursor = "not-allowed";
+        btn.onclick = (e) => { e.preventDefault(); return false; };
+      }
+      
+      gridContainer.appendChild(btn);
+    });
   }
 
-  function setActiveTier(tier) {
-    currentTier = tier;
-    renderDesktopTriggers();
-    renderMobileTriggers();
+  function setActiveTier(tierNum) {
+    activeTier = tierNum;
+    // update desktop buttons
+    document.querySelectorAll(".level-btn").forEach(btn => {
+      const val = parseInt(btn.getAttribute("data-level"));
+      if (val === tierNum) btn.classList.add("active");
+      else btn.classList.remove("active");
+    });
+    // update mobile buttons
+    document.querySelectorAll(".mobile-tier-btn").forEach(btn => {
+      const val = parseInt(btn.getAttribute("data-level"));
+      if (val === tierNum) btn.classList.add("active");
+      else btn.classList.remove("active");
+    });
     renderCurrentTier();
   }
 
-  function goToPage(delta) {
-    const newPage = currentPage + delta;
-    if (newPage >= 0 && newPage < totalPages) {
-      currentPage = newPage;
-      renderDesktopTriggers();
-      renderMobileTriggers();
-    }
-  }
-
-  function resetCounters() {
-    for (let i=0; i<TOTAL_OFFERS; i++) {
+  function resetAllCountersAndClaims() {
+    for (let i = 0; i < TOTAL; i++) {
       clickCounts[i] = 0;
       claimedStatus[i] = false;
     }
-    saveCounts();
+    persistState();
     updateTotalDisplay();
     renderCurrentTier();
-    renderDesktopTriggers();
-    renderMobileTriggers();
   }
 
-  document.getElementById("desktopPrevBtn").addEventListener("click", () => goToPage(-1));
-  document.getElementById("desktopNextBtn").addEventListener("click", () => goToPage(1));
-  document.getElementById("mobilePrevBtn").addEventListener("click", () => goToPage(-1));
-  document.getElementById("mobileNextBtn").addEventListener("click", () => goToPage(1));
-  document.getElementById("resetAllBtn").addEventListener("click", resetCounters);
+  function buildTierTriggers() {
+    const desktopContainer = document.getElementById("desktopTriggers");
+    const mobileContainer = document.getElementById("mobileTriggers");
+    if (!desktopContainer || !mobileContainer) return;
+    desktopContainer.innerHTML = "";
+    mobileContainer.innerHTML = "";
+    
+    for (let i = 1; i <= 10; i++) {
+      const dBtn = document.createElement("div");
+      dBtn.className = "level-btn";
+      dBtn.setAttribute("data-level", i);
+      dBtn.innerHTML = `<i class="fas fa-tag"></i> ${i}`;
+      dBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        setActiveTier(i);
+      });
+      desktopContainer.appendChild(dBtn);
+      
+      const mBtn = document.createElement("div");
+      mBtn.className = "mobile-tier-btn";
+      mBtn.setAttribute("data-level", i);
+      mBtn.innerHTML = `<i class="fas fa-tag"></i> ${i}`;
+      mBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        setActiveTier(i);
+      });
+      mobileContainer.appendChild(mBtn);
+    }
+  }
 
-  loadCounts();
-  renderDesktopTriggers();
-  renderMobileTriggers();
+  // initialize everything
+  loadPersistentState();
+  buildTierTriggers();
   setActiveTier(1);
   updateTotalDisplay();
+  
+  const resetBtn = document.getElementById("resetAllBtn");
+  if (resetBtn) resetBtn.addEventListener("click", resetAllCountersAndClaims);
 </script>
 </body>
 </html>
